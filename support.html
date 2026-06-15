@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alo Translate — Support & FAQs | Moonray LLC</title>
+  <meta name="description" content="Get help with Alo Translate. Find answers to common questions and contact our support team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero { max-width:1200px; margin:0 auto; padding:80px 32px 60px; display:flex; align-items:center; gap:24px; }
+    .page-hero-icon { width:80px; height:80px; border-radius:20px; flex-shrink:0; box-shadow:0 8px 32px rgba(0,0,0,0.4); }
+    .page-hero h1 { font-size:clamp(30px,5vw,48px); font-weight:900; letter-spacing:-1.5px; line-height:1.1; }
+    .page-hero p { font-size:16px; color:var(--text-2); margin-top:8px; }
+    .page-body { max-width:860px; margin:0 auto; padding:0 32px 100px; }
+    .faq-section { background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:32px; }
+    .faq-section-header { padding:24px 32px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
+    .faq-section-header .icon { font-size:22px; }
+    .faq-section-header h2 { font-size:18px; font-weight:800; color:var(--text); }
+    .faq-list { padding:8px 0; }
+    .faq-item { padding:20px 32px; border-bottom:1px solid var(--border); cursor:pointer; transition:var(--transition); }
+    .faq-item:last-child { border-bottom:none; }
+    .faq-item:hover { background:var(--surface-hover); }
+    .faq-question { font-size:15px; font-weight:700; color:var(--text); display:flex; justify-content:space-between; align-items:center; gap:16px; user-select:none; }
+    .faq-chevron { font-size:12px; color:var(--text-3); transition:transform 0.25s ease; flex-shrink:0; }
+    .faq-item.open .faq-chevron { transform:rotate(180deg); }
+    .faq-answer { font-size:14px; color:var(--text-2); line-height:1.75; max-height:0; overflow:hidden; transition:max-height 0.3s ease, padding 0.3s ease; }
+    .faq-item.open .faq-answer { max-height:400px; padding-top:12px; }
+    .contact-strip { background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(139,92,246,0.08)); border:1px solid rgba(59,130,246,0.2); border-radius:20px; padding:40px; text-align:center; }
+    .contact-strip h3 { font-size:22px; font-weight:800; margin-bottom:10px; }
+    .contact-strip p { font-size:15px; color:var(--text-2); margin-bottom:24px; }
+    .contact-strip .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+    @media(max-width:600px) { .page-hero { flex-direction:column; padding:50px 20px 40px; } .page-body { padding:0 20px 80px; } .faq-item { padding:16px 20px; } .faq-section-header { padding:20px; } }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">M</div>
+        <div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#apps">Apps</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="mailto:raymoon.code@gmail.com" class="nav-cta">Email Support</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <img src="logo/alo_translate_logo.png" alt="Alo Translate" class="page-hero-icon">
+    <div>
+      <div class="section-label" style="margin-bottom:8px;">Alo Translate</div>
+      <h1>Support <span class="gradient-text">&amp; FAQs</span></h1>
+      <p>Everything you need to know about Alo Translate.</p>
+    </div>
+  </div>
+
+  <div class="page-body">
+    <div class="faq-section animate-on-scroll">
+      <div class="faq-section-header"><span class="icon">🚀</span><h2>Getting Started</h2></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">How does Alo Translate work?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Alo Translate is an AI-powered real-time voice interpreter. Choose your source and target languages, tap the microphone button, and speak naturally. The app transcribes your speech, translates it using AI, then plays the translated audio aloud.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Which languages are supported?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Alo Translate supports 40+ languages including English, Spanish, French, German, Chinese (Simplified &amp; Traditional), Japanese, Korean, Vietnamese, Arabic, Portuguese, Russian, and many more.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need an account or internet connection?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">No account or login is required. An internet connection is needed only for live translation and voice-to-text features. Your profiles and settings are stored locally and work offline.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section animate-on-scroll" style="transition-delay:0.1s">
+      <div class="faq-section-header"><span class="icon">🔒</span><h2>Privacy &amp; Data</h2></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Is my personal information safe?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Yes. All personal profile information and conversation history are stored securely and exclusively on your physical device using iOS Keychain Services. We do not operate external user databases or cloud sync for personal data.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How can I delete my data?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Open the Profile Sheet (person icon top right), go to the "C\u00e0i \u0111\u1eb7t chung" (General Settings) tab, scroll to the bottom, and tap "X\u00f3a t\u00e0i kho\u1ea3n &amp; D\u1eef li\u1ec7u" (Delete Account &amp; Data) under Account &amp; Privacy. This permanently clears all data from your device and cannot be undone.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What data is sent to the internet?<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Only the audio/text needed for real-time translation is sent, and only at the moment of translation. These requests are stateless — no data is retained by the provider after the translation is returned.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-section animate-on-scroll" style="transition-delay:0.2s">
+      <div class="faq-section-header"><span class="icon">🛠️</span><h2>Troubleshooting</h2></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">The translation isn't working.<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">1) Ensure you have an active internet connection. 2) Check microphone and speech recognition permissions in Settings → Privacy. 3) Try speaking more clearly. 4) Restart the app. If the issue persists, email our support team.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">The microphone button is not responding.<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">Go to Settings → Privacy &amp; Security → Microphone and ensure Alo Translate is enabled. Also check Speech Recognition permissions. If already granted, try force-closing and reopening the app.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">The keyboard covers the text fields in my profile.<span class="faq-chevron">▼</span></div>
+          <div class="faq-answer">The profile sheet is fully scrollable. When the keyboard appears, scroll up within the sheet to see and interact with the field you're editing. The sheet resizes automatically to keep your content accessible.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-strip animate-on-scroll" style="transition-delay:0.3s">
+      <h3>Still need help?</h3>
+      <p>Our team is responsive and happy to assist with any issue or question you have.</p>
+      <div class="actions">
+        <a href="mailto:raymoon.code@gmail.com" class="btn-primary">📧 Email Support</a>
+        <a href="privacy.html" class="btn-ghost">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><div class="brand-mark sm">M</div><div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div></a>
+        <p>Crafting intelligent apps with care.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col"><h5>Products</h5><a href="index.html#apps">Alo Translate</a></div>
+        <div class="footer-col"><h5>Company</h5><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+        <div class="footer-col"><h5>Alo Translate</h5><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Moonray LLC. All rights reserved.</p><p>Designed &amp; built with ❤️ by Moonray LLC</p></div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    window.addEventListener('scroll', () => document.querySelector('header').classList.toggle('scrolled', window.scrollY > 30));
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

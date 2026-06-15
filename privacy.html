@@ -1,191 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alo Translate - Privacy Policy</title>
+  <title>Alo Translate — Privacy Policy | Moonray LLC</title>
+  <meta name="description" content="Alo Translate Privacy Policy. Learn how we protect your data with an on-device-first approach.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    :root {
-      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --primary: #3b82f6;
-      --primary-hover: #2563eb;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background: var(--bg-gradient);
-      color: var(--text-main);
-      font-family: 'Outfit', sans-serif;
-      min-height: 100vh;
-      line-height: 1.6;
-    }
-    header {
-      background: rgba(15, 23, 42, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
-      padding: 20px 5vw;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .logo-text {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      background: linear-gradient(to right, #60a5fa, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    nav a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 15px;
-      transition: color 0.2s;
-      margin-left: 20px;
-    }
-    nav a:hover {
-      color: var(--text-main);
-    }
-    main {
-      max-width: 800px;
-      margin: 40px auto 80px;
-      padding: 0 20px;
-    }
-    .hero {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .hero h1 {
-      font-size: 38px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    .hero p {
-      font-size: 16px;
-      color: var(--text-muted);
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 35px;
-      margin-bottom: 30px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    }
-    h2 {
-      font-size: 20px;
-      margin-top: 25px;
-      margin-bottom: 12px;
-      color: #60a5fa;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 6px;
-    }
-    h2:first-of-type {
-      margin-top: 0;
-    }
-    p, ul {
-      margin-bottom: 18px;
-      font-size: 15px;
-      color: #cbd5e1;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 8px;
-    }
-    strong {
-      color: var(--text-main);
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: var(--text-muted);
-      font-size: 14px;
-      border-top: 1px solid var(--card-border);
-    }
-    footer a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    .page-hero { max-width:1200px; margin:0 auto; padding:80px 32px 60px; display:flex; align-items:center; gap:24px; }
+    .page-hero-icon { width:80px; height:80px; border-radius:20px; flex-shrink:0; box-shadow:0 8px 32px rgba(0,0,0,0.4); }
+    .page-hero h1 { font-size:clamp(30px,5vw,48px); font-weight:900; letter-spacing:-1.5px; line-height:1.1; }
+    .page-hero p { font-size:16px; color:var(--text-2); margin-top:8px; }
+    .page-body { max-width:800px; margin:0 auto; padding:0 32px 100px; }
+    .policy-card { background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:40px; margin-bottom:20px; transition:var(--transition); }
+    .policy-card:hover { border-color:var(--border-light); }
+    .policy-card h2 { font-size:18px; font-weight:800; color:var(--blue-light); margin-bottom:16px; }
+    .policy-card p { font-size:14px; color:var(--text-2); line-height:1.8; margin-bottom:14px; }
+    .policy-card p:last-child { margin-bottom:0; }
+    .policy-card ul { padding-left:20px; margin-bottom:14px; }
+    .policy-card li { font-size:14px; color:var(--text-2); line-height:1.7; margin-bottom:6px; }
+    .policy-card strong { color:var(--text); }
+    .policy-highlight { background:rgba(59,130,246,0.07); border:1px solid rgba(59,130,246,0.18); border-radius:12px; padding:16px 20px; margin-bottom:16px; font-size:14px; color:var(--text-2); line-height:1.7; }
+    .policy-highlight strong { color:var(--blue-light); }
+    .policy-steps { display:flex; flex-direction:column; gap:10px; margin:16px 0; }
+    .policy-step { display:flex; align-items:flex-start; gap:12px; }
+    .step-num { width:26px; height:26px; background:var(--blue); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800; color:white; flex-shrink:0; margin-top:1px; }
+    .step-text { font-size:14px; color:var(--text-2); line-height:1.6; }
+    .effective-date { display:inline-flex; align-items:center; gap:8px; background:rgba(16,185,129,0.08); border:1px solid rgba(16,185,129,0.2); color:var(--green); font-size:12px; font-weight:600; padding:5px 14px; border-radius:50px; margin-bottom:40px; }
+    @media(max-width:600px) { .page-hero { flex-direction:column; padding:50px 20px 40px; } .page-body { padding:0 20px 80px; } .policy-card { padding:24px 20px; } }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container">
-      <span class="logo-text">Alo Translate</span>
+  <header id="top">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">M</div>
+        <div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#apps">Apps</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="support.html">Support</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="support.html" class="nav-cta">Get Support</a>
     </div>
-    <nav>
-      <a href="support.html">Support</a>
-    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>Privacy Policy</h1>
-      <p>Effective Date: June 15, 2026</p>
-    </section>
+  <div class="page-hero">
+    <img src="logo/alo_translate_logo.png" alt="Alo Translate" class="page-hero-icon">
+    <div>
+      <div class="section-label" style="margin-bottom:8px;">Alo Translate</div>
+      <h1>Privacy <span class="gradient-text">Policy</span></h1>
+      <p>Your privacy is not an afterthought — it's our foundation.</p>
+    </div>
+  </div>
 
-    <section class="card">
+  <div class="page-body">
+    <div style="text-align:center;margin-bottom:48px;"><span class="effective-date">✅ Effective Date: June 15, 2026</span></div>
+
+    <div class="policy-card animate-on-scroll">
       <h2>1. Overview</h2>
-      <p>Alo Translate ("we", "our", or "the App") is committed to protecting your privacy. Alo Translate is built to operate as a local-first voice interpretation utility. This Privacy Policy details how we handle information you input into the App.</p>
+      <div class="policy-highlight"><strong>Short version:</strong> Alo Translate stores everything locally on your device. We don't run user databases, we don't sell data, and we don't track you.</div>
+      <p>Alo Translate ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains how we handle information you provide in the App and what data, if any, leaves your device.</p>
+    </div>
 
-      <h2>2. Data Storage Policy (On-Device Only)</h2>
-      <p>Your privacy is our core priority. <strong>All personal profiles, custom fields, and conversation histories are stored exclusively on your physical device</strong> using secure, encrypted local storage (via Keychain Services on iOS). We do not run external user databases or sync your personal details to cloud profiles.</p>
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.07s">
+      <h2>2. On-Device Data Storage</h2>
+      <p><strong>All personal profiles, custom fields, and conversation histories are stored exclusively on your physical device</strong> using secure, encrypted local storage (iOS Keychain Services). We do not operate external user databases, cloud sync, or any remote profile storage for personal information.</p>
+    </div>
 
-      <h2>3. Optional Personal Information Collection</h2>
-      <p>To assist with translations during medical, tax, legal, or rental consultations, the App allows you to pre-fill common personal fields (such as Full Name, Date of Birth, Gender, Phone Number, Home Address, and Emergency Contact). <strong>All of these fields are entirely optional.</strong> You are not required to provide any personal details to use the primary translation and voice interpretation features of the App. If provided, this data is only used as conversational context when translating to help the AI helper suggest accurate responses.</p>
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.14s">
+      <h2>3. Optional Personal Information</h2>
+      <p>To assist with accurate contextual translations, the App allows you to optionally pre-fill common personal fields such as Full Name, Date of Birth, Gender, Phone Number, Home Address, and Emergency Contact.</p>
+      <p><strong>All fields are entirely optional.</strong> If provided, data is only used locally as conversational context. It is never sent to external servers or stored outside your device.</p>
+    </div>
 
-      <h2>4. Transient Processing for Translation and AI</h2>
-      <p>To provide translation and AI follow-up features, voice recordings are converted to text and text inputs are translated using secure, transient APIs. These requests are stateless; they do not associate inputs with your personal identity, and the service providers do not retain your input text or voice data for model training or permanent storage.</p>
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.21s">
+      <h2>4. Transient Processing for Translation</h2>
+      <p>To provide real-time translation, voice recordings are converted to text and text is translated via secure, encrypted API calls. These requests are <strong>stateless</strong> — they do not associate your input with your personal identity, and service providers do not retain your data for model training or permanent storage.</p>
+    </div>
 
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.28s">
       <h2>5. Device Permissions</h2>
-      <p>The App requests access to the following device features:</p>
       <ul>
         <li><strong>Microphone:</strong> Required to capture speech for real-time transcription and translation.</li>
-        <li><strong>Speech Recognition:</strong> Required to translate spoken words into text.</li>
+        <li><strong>Speech Recognition:</strong> Required to convert spoken words into text for translation.</li>
       </ul>
-      <p>You may revoke these permissions at any time via your device's settings.</p>
+      <p>You may revoke these permissions at any time via Settings → Privacy &amp; Security on your device.</p>
+    </div>
 
-      <h2>6. Complete Account and Data Deletion</h2>
-      <p>We provide you with full control over your data. Because all data is stored on-device, you can permanently erase it at any time directly within the App:
-      <ul>
-        <li>Open the Profile Sheet (person icon at the top right).</li>
-        <li>Select the <strong>Cài đặt chung (General Settings)</strong> tab.</li>
-        <li>Scroll to the bottom and click <strong>Xóa tài khoản & Dữ liệu (Delete Account & Data)</strong> under the "Account & Privacy" section.</li>
-      </ul>
-      Confirming this action will immediately and permanently erase all secure storage keys, personalized profiles, settings, and conversation histories from your physical device. Once deleted, this data cannot be recovered.</p>
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.35s">
+      <h2>6. Complete Data Deletion</h2>
+      <p>To permanently erase all data stored by the App:</p>
+      <div class="policy-steps">
+        <div class="policy-step"><div class="step-num">1</div><div class="step-text">Open the <strong>Profile Sheet</strong> (person icon at top-right of the main screen).</div></div>
+        <div class="policy-step"><div class="step-num">2</div><div class="step-text">Navigate to the <strong>C\u00e0i \u0111\u1eb7t chung (General Settings)</strong> tab.</div></div>
+        <div class="policy-step"><div class="step-num">3</div><div class="step-text">Scroll to the bottom and tap <strong>X\u00f3a t\u00e0i kho\u1ea3n &amp; D\u1eef li\u1ec7u (Delete Account &amp; Data)</strong> under "Account &amp; Privacy".</div></div>
+      </div>
+      <p>This immediately and permanently erases all profiles, settings, and conversation histories from your device. <strong>This action cannot be undone.</strong></p>
+    </div>
 
-      <h2>7. Contact Us</h2>
-      <p>If you have any questions or feedback regarding this Privacy Policy, please contact us at: <a href="mailto:raymoon.code@gmail.com">raymoon.code@gmail.com</a>.</p>
-    </section>
-  </main>
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.42s">
+      <h2>7. Children's Privacy</h2>
+      <p>Alo Translate is not directed at children under 13. We do not knowingly collect personal information from children. If you believe a child has provided information via the App, please contact us immediately.</p>
+    </div>
+
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.49s">
+      <h2>8. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The effective date at the top of this page will always reflect the most recent revision.</p>
+    </div>
+
+    <div class="policy-card animate-on-scroll" style="transition-delay:0.56s">
+      <h2>9. Contact Us</h2>
+      <p><a href="mailto:raymoon.code@gmail.com" style="color:var(--blue-light);font-weight:700;">📧 raymoon.code@gmail.com</a></p>
+      <p style="margin-top:16px;"><a href="support.html" style="color:var(--blue-light);font-weight:700;">🛟 Visit Support &amp; FAQs →</a></p>
+    </div>
+  </div>
 
   <footer>
-    <p>&copy; 2026 Alo Translate. All rights reserved. | <a href="support.html">Support</a></p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand"><div class="brand-mark sm">M</div><div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div></a>
+        <p>Crafting intelligent apps with care.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col"><h5>Products</h5><a href="index.html#apps">Alo Translate</a></div>
+        <div class="footer-col"><h5>Company</h5><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
+        <div class="footer-col"><h5>Alo Translate</h5><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Moonray LLC. All rights reserved.</p><p>Designed &amp; built with ❤️ by Moonray LLC</p></div>
   </footer>
+
+  <script>
+    const observer = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    window.addEventListener('scroll', () => document.querySelector('header').classList.toggle('scrolled', window.scrollY > 30));
+  </script>
 </body>
 </html>
