@@ -35,6 +35,7 @@
         <span></span><span></span><span></span>
       </button>
     </div>
+    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="#apps" onclick="closeMobileMenu()">Apps</a></li>
@@ -90,6 +91,7 @@
     <p class="section-sub">Premium mobile applications designed for real people solving real problems.</p>
 
     <div class="apps-grid">
+      <!-- Alo Translate -->
       <div class="app-card featured">
         <div class="app-card-inner">
           <div class="app-meta">
@@ -107,20 +109,25 @@
             An AI-powered real-time voice interpreter that breaks language barriers in medical, legal, and everyday conversations. Speak naturally — Alo Translate listens, translates, and speaks back.
           </p>
           <ul class="app-features">
-            <li>🎙️ Real-time voice transcription &amp; translation</li>
+            <li>🎙️ Real-time voice transcription & translation</li>
             <li>🌐 40+ supported languages</li>
             <li>🔒 All data stored privately on-device</li>
             <li>🧠 AI-assisted follow-up suggestions</li>
             <li>👤 Multi-profile support</li>
           </ul>
           <div class="app-links">
-            <a href="support.html" class="app-link-btn secondary">Support &amp; FAQs</a>
-            <a href="privacy.html" class="app-link-btn ghost">Privacy Policy</a>
+            <a href="support.html" class="app-link-btn secondary">
+              Support &amp; FAQs
+            </a>
+            <a href="privacy.html" class="app-link-btn ghost">
+              Privacy Policy
+            </a>
           </div>
         </div>
         <div class="app-card-glow"></div>
       </div>
 
+      <!-- Placeholder for future app -->
       <div class="app-card coming-soon">
         <div class="app-card-inner">
           <div class="cs-icon">🚀</div>
@@ -203,7 +210,7 @@
       </div>
       <div class="service-card">
         <div class="service-icon">☁️</div>
-        <h3>Cloud &amp; API Design</h3>
+        <h3>Cloud & API Design</h3>
         <p>Stateless, secure backend endpoints and cloud infrastructure designed for reliability under real-world loads.</p>
       </div>
     </div>
@@ -317,6 +324,7 @@
   </footer>
 
   <script>
+    // Hamburger menu
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     hamburger.addEventListener('click', () => {
@@ -327,19 +335,32 @@
       hamburger.classList.remove('open');
       mobileMenu.classList.remove('open');
     }
+
+    // Sticky header shadow on scroll
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 30);
+      if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     });
+
+    // Intersection Observer for fade-in animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
       });
     }, { threshold: 0.1 });
+
     document.querySelectorAll('.app-card, .service-card, .value-card, .float-card, .legal-block').forEach(el => {
       el.classList.add('animate-on-scroll');
       observer.observe(el);
     });
+
+    // Contact form handler (mailto fallback)
     function handleFormSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('contactName').value;

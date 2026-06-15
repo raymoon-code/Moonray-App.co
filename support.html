@@ -10,37 +10,138 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .page-hero { max-width:1200px; margin:0 auto; padding:80px 32px 60px; display:flex; align-items:center; gap:24px; }
-    .page-hero-icon { width:80px; height:80px; border-radius:20px; flex-shrink:0; box-shadow:0 8px 32px rgba(0,0,0,0.4); }
-    .page-hero h1 { font-size:clamp(30px,5vw,48px); font-weight:900; letter-spacing:-1.5px; line-height:1.1; }
-    .page-hero p { font-size:16px; color:var(--text-2); margin-top:8px; }
-    .page-body { max-width:860px; margin:0 auto; padding:0 32px 100px; }
-    .faq-section { background:var(--surface); border:1px solid var(--border); border-radius:20px; overflow:hidden; margin-bottom:32px; }
-    .faq-section-header { padding:24px 32px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:12px; }
-    .faq-section-header .icon { font-size:22px; }
-    .faq-section-header h2 { font-size:18px; font-weight:800; color:var(--text); }
-    .faq-list { padding:8px 0; }
-    .faq-item { padding:20px 32px; border-bottom:1px solid var(--border); cursor:pointer; transition:var(--transition); }
-    .faq-item:last-child { border-bottom:none; }
-    .faq-item:hover { background:var(--surface-hover); }
-    .faq-question { font-size:15px; font-weight:700; color:var(--text); display:flex; justify-content:space-between; align-items:center; gap:16px; user-select:none; }
-    .faq-chevron { font-size:12px; color:var(--text-3); transition:transform 0.25s ease; flex-shrink:0; }
-    .faq-item.open .faq-chevron { transform:rotate(180deg); }
-    .faq-answer { font-size:14px; color:var(--text-2); line-height:1.75; max-height:0; overflow:hidden; transition:max-height 0.3s ease, padding 0.3s ease; }
-    .faq-item.open .faq-answer { max-height:400px; padding-top:12px; }
-    .contact-strip { background:linear-gradient(135deg,rgba(59,130,246,0.08),rgba(139,92,246,0.08)); border:1px solid rgba(59,130,246,0.2); border-radius:20px; padding:40px; text-align:center; }
-    .contact-strip h3 { font-size:22px; font-weight:800; margin-bottom:10px; }
-    .contact-strip p { font-size:15px; color:var(--text-2); margin-bottom:24px; }
-    .contact-strip .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
-    @media(max-width:600px) { .page-hero { flex-direction:column; padding:50px 20px 40px; } .page-body { padding:0 20px 80px; } .faq-item { padding:16px 20px; } .faq-section-header { padding:20px; } }
+    /* Page-specific overrides */
+    .page-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 32px 60px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .page-hero-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .page-hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+    .page-hero p {
+      font-size: 16px;
+      color: var(--text-2);
+      margin-top: 8px;
+    }
+    .page-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px 100px;
+    }
+    .faq-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .faq-section-header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-section-header .icon { font-size: 22px; }
+    .faq-section-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .faq-list { padding: 8px 0; }
+    .faq-item {
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item:hover { background: var(--surface-hover); }
+    .faq-question {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-chevron {
+      font-size: 12px;
+      color: var(--text-3);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.75;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-top: 12px;
+    }
+    .contact-strip {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+    .contact-strip h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .contact-strip p {
+      font-size: 15px;
+      color: var(--text-2);
+      margin-bottom: 24px;
+    }
+    .contact-strip .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      .page-hero { flex-direction: column; padding: 50px 20px 40px; }
+      .page-hero-icon { width: 64px; height: 64px; }
+      .page-body { padding: 0 20px 80px; }
+      .faq-section-header { padding: 20px 20px; }
+      .faq-item { padding: 16px 20px; }
+    }
   </style>
 </head>
 <body>
+
   <header id="top">
     <div class="header-inner">
       <a href="index.html" class="brand">
         <div class="brand-mark">M</div>
-        <div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div>
+        <div class="brand-text">
+          <span class="brand-name">Moonray</span>
+          <span class="brand-tagline">LLC</span>
+        </div>
       </a>
       <nav class="main-nav">
         <ul>
@@ -64,60 +165,119 @@
   </div>
 
   <div class="page-body">
+
+    <!-- Getting Started -->
     <div class="faq-section animate-on-scroll">
-      <div class="faq-section-header"><span class="icon">🚀</span><h2>Getting Started</h2></div>
+      <div class="faq-section-header">
+        <span class="icon">🚀</span>
+        <h2>Getting Started</h2>
+      </div>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-question">How does Alo Translate work?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Alo Translate is an AI-powered real-time voice interpreter. Choose your source and target languages, tap the microphone button, and speak naturally. The app transcribes your speech, translates it using AI, then plays the translated audio aloud.</div>
+          <div class="faq-question">
+            How does Alo Translate work?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Alo Translate is an AI-powered real-time voice interpreter. Choose your source and target languages, tap the microphone button, and speak naturally. The app transcribes your speech, translates it using AI, then plays the translated audio aloud — enabling seamless two-way conversations.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Which languages are supported?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Alo Translate supports 40+ languages including English, Spanish, French, German, Chinese (Simplified &amp; Traditional), Japanese, Korean, Vietnamese, Arabic, Portuguese, Russian, and many more.</div>
+          <div class="faq-question">
+            Which languages are supported?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Alo Translate supports 40+ languages including English, Spanish, French, German, Chinese (Simplified &amp; Traditional), Japanese, Korean, Vietnamese, Arabic, Portuguese, Russian, and many more. The full list is available in the language selector within the app.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Do I need an account or internet connection?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">No account or login is required. An internet connection is needed only for live translation and voice-to-text features. Your profiles and settings are stored locally and work offline.</div>
+          <div class="faq-question">
+            Do I need an account or internet connection?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            No account or login is required. An internet connection is needed only for the live translation and voice-to-text features, which use secure, stateless API requests. Your profiles and settings are stored locally on your device and work offline.
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Privacy & Data -->
     <div class="faq-section animate-on-scroll" style="transition-delay:0.1s">
-      <div class="faq-section-header"><span class="icon">🔒</span><h2>Privacy &amp; Data</h2></div>
+      <div class="faq-section-header">
+        <span class="icon">🔒</span>
+        <h2>Privacy &amp; Data</h2>
+      </div>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-question">Is my personal information safe?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Yes. All personal profile information and conversation history are stored securely and exclusively on your physical device using iOS Keychain Services. We do not operate external user databases or cloud sync for personal data.</div>
+          <div class="faq-question">
+            Is my personal information safe?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes, absolutely. All personal profile information (Name, Date of Birth, Gender, etc.) and conversation history are stored securely and exclusively on your physical device using iOS Keychain Services. We do not operate external user databases or cloud sync for personal data.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">How can I delete my data?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Open the Profile Sheet (person icon top right), go to the "C\u00e0i \u0111\u1eb7t chung" (General Settings) tab, scroll to the bottom, and tap "X\u00f3a t\u00e0i kho\u1ea3n &amp; D\u1eef li\u1ec7u" (Delete Account &amp; Data) under Account &amp; Privacy. This permanently clears all data from your device and cannot be undone.</div>
+          <div class="faq-question">
+            How can I delete my data?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Open the Profile Sheet (person icon at the top right of the main screen), navigate to the "Cài đặt chung" (General Settings) tab, and scroll to the bottom. Under "Account &amp; Privacy", tap "Xóa tài khoản &amp; Dữ liệu" (Delete Account &amp; Data). This permanently clears all profiles, settings, and conversation history from your device. This action cannot be undone.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">What data is sent to the internet?<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Only the audio/text needed for real-time translation is sent, and only at the moment of translation. These requests are stateless — no data is retained by the provider after the translation is returned.</div>
+          <div class="faq-question">
+            What data is sent to the internet?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Only the audio/text needed for real-time translation is sent over the internet, and only at the moment of translation. These requests are stateless — the API does not associate your voice or text with your identity, and no data is retained by the provider after the translation is returned.
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Troubleshooting -->
     <div class="faq-section animate-on-scroll" style="transition-delay:0.2s">
-      <div class="faq-section-header"><span class="icon">🛠️</span><h2>Troubleshooting</h2></div>
+      <div class="faq-section-header">
+        <span class="icon">🛠️</span>
+        <h2>Troubleshooting</h2>
+      </div>
       <div class="faq-list">
         <div class="faq-item">
-          <div class="faq-question">The translation isn't working.<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">1) Ensure you have an active internet connection. 2) Check microphone and speech recognition permissions in Settings → Privacy. 3) Try speaking more clearly. 4) Restart the app. If the issue persists, email our support team.</div>
+          <div class="faq-question">
+            The translation isn't working. What should I do?
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            1) Ensure you have an active internet connection. 2) Check that microphone and speech recognition permissions are granted in Settings → Privacy → Microphone/Speech Recognition. 3) Try speaking more clearly and slightly slower. 4) Restart the app. If the issue persists, email our support team.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">The microphone button is not responding.<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">Go to Settings → Privacy &amp; Security → Microphone and ensure Alo Translate is enabled. Also check Speech Recognition permissions. If already granted, try force-closing and reopening the app.</div>
+          <div class="faq-question">
+            The microphone button is not responding.
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            Go to Settings → Privacy &amp; Security → Microphone and ensure Alo Translate is enabled. Also check Settings → Privacy &amp; Security → Speech Recognition. If permissions are already granted, try force-closing the app and reopening it.
+          </div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">The keyboard covers the text fields in my profile.<span class="faq-chevron">▼</span></div>
-          <div class="faq-answer">The profile sheet is fully scrollable. When the keyboard appears, scroll up within the sheet to see and interact with the field you're editing. The sheet resizes automatically to keep your content accessible.</div>
+          <div class="faq-question">
+            The keyboard is covering the text fields when editing my profile.
+            <span class="faq-chevron">▼</span>
+          </div>
+          <div class="faq-answer">
+            The profile sheet is fully scrollable. When the keyboard appears, scroll up within the sheet to see and interact with the field you're editing. The sheet will resize automatically to keep your content accessible.
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Contact Strip -->
     <div class="contact-strip animate-on-scroll" style="transition-delay:0.3s">
       <h3>Still need help?</h3>
       <p>Our team is responsive and happy to assist with any issue or question you have.</p>
@@ -126,27 +286,58 @@
         <a href="privacy.html" class="btn-ghost">Privacy Policy</a>
       </div>
     </div>
+
   </div>
 
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <a href="index.html" class="brand"><div class="brand-mark sm">M</div><div class="brand-text"><span class="brand-name">Moonray</span><span class="brand-tagline">LLC</span></div></a>
+        <a href="index.html" class="brand">
+          <div class="brand-mark sm">M</div>
+          <div class="brand-text">
+            <span class="brand-name">Moonray</span>
+            <span class="brand-tagline">LLC</span>
+          </div>
+        </a>
         <p>Crafting intelligent apps with care.</p>
       </div>
       <div class="footer-links">
-        <div class="footer-col"><h5>Products</h5><a href="index.html#apps">Alo Translate</a></div>
-        <div class="footer-col"><h5>Company</h5><a href="index.html#about">About</a><a href="index.html#contact">Contact</a></div>
-        <div class="footer-col"><h5>Alo Translate</h5><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a></div>
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="index.html#apps">Alo Translate</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Alo Translate</h5>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Moonray LLC. All rights reserved.</p><p>Designed &amp; built with ❤️ by Moonray LLC</p></div>
+    <div class="footer-bottom">
+      <p>© 2026 Moonray LLC. All rights reserved.</p>
+      <p>Designed &amp; built with ❤️ by Moonray LLC</p>
+    </div>
   </footer>
 
   <script>
-    const observer = new IntersectionObserver((e) => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:0.1});
+    // Scroll animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-    window.addEventListener('scroll', () => document.querySelector('header').classList.toggle('scrolled', window.scrollY > 30));
+
+    // Sticky header
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // FAQ accordion
     document.querySelectorAll('.faq-item').forEach(item => {
       item.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');

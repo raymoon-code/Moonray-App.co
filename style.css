@@ -31,6 +31,7 @@
   --transition:    all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ---- Reset ---- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -57,6 +58,9 @@ body {
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 
+/* ============================================================
+   HEADER
+   ============================================================ */
 header {
   position: sticky;
   top: 0;
@@ -83,6 +87,7 @@ header.scrolled {
   gap: 32px;
 }
 
+/* Brand */
 .brand {
   display: flex;
   align-items: center;
@@ -134,6 +139,7 @@ header.scrolled {
   letter-spacing: 1.5px;
 }
 
+/* Nav */
 .main-nav { flex: 1; }
 
 .main-nav ul {
@@ -174,6 +180,7 @@ header.scrolled {
   transform: translateY(-1px);
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -199,6 +206,7 @@ header.scrolled {
 .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   border-top: 1px solid var(--border);
@@ -230,6 +238,9 @@ header.scrolled {
   background: var(--surface);
 }
 
+/* ============================================================
+   HERO
+   ============================================================ */
 .hero {
   position: relative;
   min-height: calc(100vh - 72px);
@@ -325,6 +336,7 @@ header.scrolled {
   flex-wrap: wrap;
 }
 
+/* Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -371,6 +383,7 @@ header.scrolled {
   transform: translateY(-2px);
 }
 
+/* Hero Visual (floating cards) */
 .hero-visual {
   position: relative;
   width: 260px;
@@ -400,6 +413,9 @@ header.scrolled {
 .fc-icon { font-size: 22px; }
 .fc-label { font-size: 13px; font-weight: 700; color: var(--text); }
 
+/* ============================================================
+   SECTION LAYOUT
+   ============================================================ */
 .section-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -409,6 +425,14 @@ header.scrolled {
 .alt-section {
   background: var(--bg-2);
   max-width: 100%;
+}
+
+.alt-section > * {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .alt-section.section-wrapper {
@@ -445,6 +469,9 @@ header.scrolled {
   line-height: 1.7;
 }
 
+/* ============================================================
+   APPS SECTION
+   ============================================================ */
 .apps-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -580,6 +607,8 @@ header.scrolled {
   gap: 8px;
 }
 
+.app-features li::before { content: ''; }
+
 .app-links {
   display: flex;
   gap: 12px;
@@ -621,6 +650,7 @@ header.scrolled {
   border-color: var(--blue);
 }
 
+/* Coming soon card */
 .app-card.coming-soon {
   border-style: dashed;
   border-color: var(--border-light);
@@ -645,6 +675,13 @@ header.scrolled {
   color: var(--text-2);
 }
 
+.app-card.coming-soon .app-desc {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
 .about-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -730,6 +767,9 @@ header.scrolled {
   line-height: 1.6;
 }
 
+/* ============================================================
+   SERVICES
+   ============================================================ */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -771,6 +811,9 @@ header.scrolled {
   line-height: 1.7;
 }
 
+/* ============================================================
+   LEGAL SECTION
+   ============================================================ */
 .legal-section {
   background: none;
   border-top: 1px solid var(--border);
@@ -833,6 +876,9 @@ header.scrolled {
   text-decoration: underline;
 }
 
+/* ============================================================
+   CONTACT
+   ============================================================ */
 .contact-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -972,6 +1018,9 @@ header.scrolled {
   line-height: 1.5;
 }
 
+/* ============================================================
+   FOOTER
+   ============================================================ */
 footer {
   background: var(--bg-2);
   border-top: 1px solid var(--border);
@@ -988,7 +1037,9 @@ footer {
   border-bottom: 1px solid var(--border);
 }
 
-.footer-brand .brand { margin-bottom: 16px; }
+.footer-brand .brand {
+  margin-bottom: 16px;
+}
 
 .footer-brand p {
   font-size: 14px;
@@ -1023,7 +1074,9 @@ footer {
   transition: var(--transition);
 }
 
-.footer-col a:hover { color: var(--text); }
+.footer-col a:hover {
+  color: var(--text);
+}
 
 .footer-bottom {
   max-width: 1200px;
@@ -1040,6 +1093,9 @@ footer {
   color: var(--text-3);
 }
 
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.6; transform: scale(0.85); }
@@ -1055,6 +1111,7 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Scroll-triggered animations */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(24px);
@@ -1066,6 +1123,7 @@ footer {
   transform: translateY(0);
 }
 
+/* Stagger for grids */
 .app-card:nth-child(2)      { transition-delay: 0.1s; }
 .service-card:nth-child(2)  { transition-delay: 0.08s; }
 .service-card:nth-child(3)  { transition-delay: 0.16s; }
@@ -1077,9 +1135,13 @@ footer {
 .float-card.card-c          { transition-delay: 0.24s; }
 .legal-block:nth-child(2)   { transition-delay: 0.1s; }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 1024px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .apps-grid { grid-template-columns: 1fr; }
+  .app-card.coming-soon .app-card-inner { min-height: 200px; }
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-text .section-title { font-size: 38px; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -1090,30 +1152,44 @@ footer {
   .main-nav { display: none; }
   .nav-cta { display: none; }
   .hamburger { display: flex; }
-  .hero { flex-direction: column; min-height: auto; padding: 60px 24px 80px; text-align: center; }
+
+  .hero {
+    flex-direction: column;
+    min-height: auto;
+    padding: 60px 24px 80px;
+    text-align: center;
+  }
+
   .hero-content { max-width: 100%; }
   .hero-sub { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
   .hero-visual { display: none; }
+
   .section-wrapper { padding: 70px 24px; }
   .section-title { font-size: 32px; letter-spacing: -1px; }
   .section-sub { font-size: 15px; }
+
   .contact-card { grid-template-columns: 1fr; }
   .contact-info-col { border-right: none; border-bottom: 1px solid var(--border); padding: 32px 24px; }
   .contact-form { padding: 32px 24px; }
   .form-row { grid-template-columns: 1fr; }
+
   .legal-grid { grid-template-columns: 1fr; }
+
   .about-grid { padding: 70px 24px; }
   .about-values { grid-template-columns: 1fr; }
   .about-stats { gap: 24px; }
+
   .footer-links { grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+
   .app-card-inner { padding: 24px; }
   .app-icon { width: 56px; height: 56px; }
 }
 
 @media (max-width: 480px) {
   .hero-title { font-size: 36px; }
+  .hero-badge { font-size: 12px; }
   .btn-primary, .btn-ghost { padding: 12px 22px; font-size: 14px; }
   .services-grid { grid-template-columns: 1fr; }
   .footer-links { grid-template-columns: 1fr; }
