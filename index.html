@@ -1,169 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonray LLC - App Builder & Software Solutions</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonray LLC — Crafting Intelligent Apps</title>
+  <meta name="description" content="Moonray LLC builds premium mobile and AI-powered applications. Explore our apps and developer services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <h1>Moonray LLC</h1>
-            <p>App Development Solutions</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#alo-translate-support">Alo Translate Support</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#terms">Terms</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Moonray LLC specializes in creating high-performance, responsive mobile and web applications tailored to your business needs. We translate complex software requirements into intuitive, elegant, and secure user experiences.</p>
-    </section>
-    
-    <section id="services">
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="icon">📱</span>
-                <h3>Custom Mobile Apps</h3>
-                <p>Native and cross-platform mobile app development tailored for iOS and Android with premium, fluid user interfaces.</p>
-            </div>
-            <div class="service-card">
-                <span class="icon">💻</span>
-                <h3>Web Applications</h3>
-                <p>Secure, scalable, and responsive web systems built using modern architectures and best deployment practices.</p>
-            </div>
-            <div class="service-card">
-                <span class="icon">🤖</span>
-                <h3>AI & Intelligent Tech</h3>
-                <p>Natural language processing, voice transcription, and context-aware conversational systems powered by advanced AI model APIs.</p>
-            </div>
-            <div class="service-card">
-                <span class="icon">☁️</span>
-                <h3>Cloud Infrastructures</h3>
-                <p>Robust server integrations, stateless endpoints, and secure API gateways designed to run seamlessly under heavy loads.</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="alo-translate-support">
-        <h2>Alo Translate — Support & FAQs</h2>
-        <div class="faq-box">
-            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">
-                Find answers to common questions and review support details for the <strong>Alo Translate</strong> AI Voice Interpreter.
-            </p>
-            
-            <div class="faq-item">
-                <p class="faq-question">How does Alo Translate work?</p>
-                <p class="faq-answer">Alo Translate is an AI-powered voice interpreter. Simply choose your target language, tap a microphone button, and speak. The app transcribes, translates, and plays the audio translation aloud to facilitate seamless two-way conversations.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Is my personal information safe?</p>
-                <p class="faq-answer">Yes, absolutely. All personal profile information, such as your optional personal profile fields (Name, Date of Birth, Gender, etc.) and your conversation history, is stored securely and locally on your physical device. We do not store your data on external databases or servers.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Do I need an account to use the app?</p>
-                <p class="faq-answer">No account or login is required to use any translation features. The app is fully functional offline/locally for stored configurations, and uses transient, stateless APIs solely for voice-to-text and translation processing.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">How can I delete my data?</p>
-                <p class="faq-answer">You can easily wipe all of your data at any time. Open the profile sheet (person icon at the top right), navigate to the "Cài đặt chung" (General Settings) tab, and scroll to the bottom. Under "Account & Privacy", tap "Xóa tài khoản & Dữ liệu" (Delete Account & Data). This will completely and permanently clear all profiles and conversations from your device.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">What should I do if the translation fails?</p>
-                <p class="faq-answer">Ensure you have an active internet connection. If the issue persists, try speaking more clearly or checking that your microphone permissions are enabled in your device settings.</p>
-            </div>
+  <!-- ===================== HEADER ===================== -->
+  <header id="top">
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <div class="brand-mark">M</div>
+        <div class="brand-text">
+          <span class="brand-name">Moonray</span>
+          <span class="brand-tagline">LLC</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#apps">Apps</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#apps" onclick="closeMobileMenu()">Apps</a></li>
+        <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+        <li><a href="#services" onclick="closeMobileMenu()">Services</a></li>
+        <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+      </ul>
+    </div>
+  </header>
 
-            <div class="support-banner">
-                <h4>Need additional support or have questions?</h4>
-                <p>Email our Alo Translate support team and we will get back to you shortly.</p>
-                <a href="mailto:raymoon.code@gmail.com" class="support-link" style="font-size: 16px;">Email: raymoon.code@gmail.com</a>
-                <p style="margin-top: 15px; font-size: 13px;"><a href="privacy.html" class="support-link">Read the Alo Translate Privacy Policy &rarr;</a></p>
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-glow glow-1"></div>
+    <div class="hero-bg-glow glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Indie Developer Studio
+      </div>
+      <h1 class="hero-title">
+        Crafting Apps That<br>
+        <span class="gradient-text">Feel Like Magic</span>
+      </h1>
+      <p class="hero-sub">
+        Moonray LLC builds elegant, AI-powered mobile experiences with privacy at their core.<br>
+        Thoughtfully designed. Precisely engineered.
+      </p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn-primary">Explore Our Apps</a>
+        <a href="#about" class="btn-ghost">Learn About Us</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Ambient light effect behind the phone -->
+      <div class="mockup-glow"></div>
+      
+      <!-- Phone Frame Mockup -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <!-- Status Bar -->
+          <div class="phone-status-bar">
+            <span class="time">9:41</span>
+            <div class="icons">
+              <span class="signal">📶</span>
+              <span class="battery">🔋</span>
             </div>
+          </div>
+          
+          <!-- App Header -->
+          <div class="phone-app-header">
+            <div class="app-brand">
+              <img src="logo/alo_translate_logo.png" alt="Alo Logo" class="app-logo">
+              <div class="app-title-group">
+                <span class="app-title">Alo Translate</span>
+                <span class="app-status">Listening...</span>
+              </div>
+            </div>
+            <div class="recording-indicator">
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+          
+          <!-- Chat Feed -->
+          <div class="phone-chat-feed">
+            <div class="chat-date">Today</div>
+            
+            <div class="chat-bubble user">
+              <div class="bubble-meta">
+                <span class="bubble-lang">English (US)</span>
+                <span class="bubble-icon">🎙️</span>
+              </div>
+              <p class="bubble-text">Hello doctor, I have a sharp pain in my stomach.</p>
+            </div>
+            
+            <div class="chat-bubble ai">
+              <div class="bubble-meta">
+                <span class="bubble-lang">Spanish (ES)</span>
+                <span class="bubble-icon">🔊</span>
+              </div>
+              <p class="bubble-text">Hola doctor, tengo un dolor agudo en el estómago.</p>
+            </div>
+          </div>
+          
+          <!-- Waveform Animation -->
+          <div class="phone-wave-container">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
         </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-container">
-            <form>
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <textarea placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+      </div>
+      
+      <!-- Floating Badges surrounding the phone -->
+      <div class="float-card card-a">
+        <span class="fc-icon">🌍</span>
+        <span class="fc-label">40+ Languages</span>
+      </div>
+      <div class="float-card card-b">
+        <span class="fc-icon">🔒</span>
+        <span class="fc-label">100% On-Device</span>
+      </div>
+      <div class="float-card card-c">
+        <span class="fc-icon">⚡</span>
+        <span class="fc-label">Real-Time AI</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== APPS ===================== -->
+  <section id="apps" class="section-wrapper">
+    <div class="section-label">Our Products</div>
+    <h2 class="section-title">Apps We've Built</h2>
+    <p class="section-sub">Premium mobile applications designed for real people solving real problems.</p>
+
+    <div class="apps-grid">
+      <!-- Alo Translate -->
+      <div class="app-card featured">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <img src="logo/alo_translate_logo.png" alt="Alo Translate App Icon" class="app-icon">
+            <div class="app-info">
+              <h3>Alo Translate</h3>
+              <p class="app-platform">
+                <span class="platform-badge ios">iOS</span>
+                <span class="platform-badge ipados">iPadOS</span>
+              </p>
+            </div>
+            <span class="app-status live">Live</span>
+          </div>
+          <p class="app-desc">
+            An AI-powered real-time voice interpreter that breaks language barriers in medical, legal, and everyday conversations. Speak naturally — Alo Translate listens, translates, and speaks back.
+          </p>
+          <ul class="app-features">
+            <li>🎙️ Real-time voice transcription & translation</li>
+            <li>🌐 40+ supported languages</li>
+            <li>🔒 All data stored privately on-device</li>
+            <li>🧠 AI-assisted follow-up suggestions</li>
+            <li>👤 Multi-profile support</li>
+          </ul>
+          <div class="app-links">
+            <a href="support.html" class="app-link-btn secondary">
+              Support &amp; FAQs
+            </a>
+            <a href="privacy.html" class="app-link-btn ghost">
+              Privacy Policy
+            </a>
+          </div>
         </div>
-    </section>
-    
-    <section id="terms">
-        <h2>Terms and Conditions</h2>
-        <div class="terms-box">
-            <p><strong>Last Updated: Feb 24 2025</strong></p>
-            <p>Please read these Terms and Conditions ("Terms") carefully before using the MoonMusicPlayer (the "App"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use the App.</p>
-            
-            <h3>1. Acceptance of Terms</h3>
-            <p>By accessing or using the App, you agree to comply with these Terms and all applicable laws and regulations governing the App.</p>
-            
-            <h3>2. Eligibility</h3>
-            <p>The App is intended for users aged 13 and older. If you are under the age of 13, you must have parental or guardian consent to use the App. We reserve the right to terminate accounts if users do not meet this requirement.</p>
-            
-            <h3>3. Account Registration</h3>
-            <p>To use certain features, you may be required to create an account. You are responsible for maintaining the confidentiality of your login credentials and any activity under your account.</p>
-            
-            <h3>4. Use of the App</h3>
-            <p>You agree not to misuse the App, including but not limited to:</p>
-            <ul>
-                <li>Engaging in unauthorized access, hacking, or tampering with App security.</li>
-                <li>Uploading malicious software, malware, or harmful content.</li>
-                <li>Violating any applicable laws or regulations.</li>
-            </ul>
-            
-            <h3>5. Content Ownership and Usage</h3>
-            <p>This app is not affiliated with, endorsed by, or associated with YouTube. All video content is provided by the YouTube API and is subject to YouTube’s Terms of Service.</p>
-            
-            <h3>6. User-Generated Content</h3>
-            <p>Users may submit content such as comments, responses, or feedback. By submitting content, you grant us a non-exclusive, royalty-free license to use, display, and distribute your content within the App. You must ensure your content does not violate any laws or third-party rights.</p>
-            
-            <h3>7. Privacy Policy</h3>
-            <p>Your use of the App is subject to our Privacy Policy. To learn how we collect, use, and protect your data, please review our <a href="https://raymoon-code.github.io/Moonray-App.co/#terms">Privacy Policy</a>.</p>
-            
-            <h3>8. Subscriptions and Payments</h3>
-            <p>Some features of the App may require a paid subscription. By subscribing, you agree to pay applicable fees, which may be billed on a recurring basis. Subscription cancellations must be managed through your account settings.</p>
-            
-            <h3>9. Termination of Use</h3>
-            <p>We reserve the right to terminate or suspend your account without notice if you violate these Terms or engage in activities that harm the App or other users.</p>
-            
-            <h3>10. Disclaimers</h3>
-            <p>The App is provided "as is" without any warranties. We do not guarantee that the App will always be available, secure, or error-free.</p>
-            
-            <h3>11. Limitation of Liability</h3>
-            <p>To the fullest extent permitted by law, we shall not be liable for any direct, indirect, or consequential damages arising from your use of the App.</p>
-            
-            <h3>12. Modifications to Terms</h3>
-            <p>We may update these Terms from time to time. Continued use of the App after changes are made constitutes acceptance of the updated Terms.</p>
-            
-            <h3>13. Governing Law</h3>
-            <p>These Terms are governed by the laws of [Your Country/State]. Any disputes shall be resolved in the appropriate courts of [Your Country/State].</p>
-            
-            <h3>14. Contact Us</h3>
-            <p>If you have any questions about these Terms, please contact us at <a href="mailto:raymooninvest@gmail.com">raymooninvest@gmail.com</a>.</p>
+        <div class="app-card-glow"></div>
+      </div>
+
+      <!-- Placeholder for future app -->
+      <div class="app-card coming-soon">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <div class="cs-icon-bg">
+              <span class="cs-icon">🚀</span>
+            </div>
+            <div class="app-info">
+              <h3>More Coming Soon</h3>
+              <p class="app-platform"><span class="platform-badge dev">In Development</span></p>
+            </div>
+          </div>
+          <p class="app-desc">
+            We are actively designing and engineering our next suite of intelligent tools. Focused on privacy, speed, and seamless integration.
+          </p>
+          
+          <div class="skeleton-grid">
+            <div class="skeleton-row">
+              <span class="sk-icon">🔒</span>
+              <div class="sk-lines"><div class="sk-line long"></div><div class="sk-line short"></div></div>
+            </div>
+            <div class="skeleton-row">
+              <span class="sk-icon">🧠</span>
+              <div class="sk-lines"><div class="sk-line medium"></div><div class="sk-line long"></div></div>
+            </div>
+          </div>
+          
+          <div class="app-links" style="margin-top: auto;">
+            <a href="#contact" class="app-link-btn primary-glow">Get Notified</a>
+          </div>
         </div>
-    </section>
-    
-    <footer>
-        <p>&copy; 2026 Moonray LLC. All Rights Reserved.</p>
-    </footer>
+        <div class="app-card-glow bg-purple"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section-wrapper alt-section">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title left-align">Built by a<br><span class="gradient-text">Developer Who Cares</span></h2>
+        <p>Moonray LLC is an independent software studio focused on building premium mobile and AI-powered applications. Every product we ship is thoughtfully designed with the user's privacy, clarity, and experience as the highest priorities.</p>
+        <p>We believe great software doesn't need to be complicated. The best app is one you can pick up and immediately understand — then keep using because it genuinely improves your day.</p>
+        <div class="about-stats">
+          <div class="stat-item">
+            <span class="stat-num">1+</span>
+            <span class="stat-label">App Published</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">40+</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">0</span>
+            <span class="stat-label">Data Sold</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-values">
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h4>Privacy First</h4>
+          <p>Your data stays on your device. We never sell, share, or monetize user information.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">✨</div>
+          <h4>Premium Quality</h4>
+          <p>Every detail matters — from animations to accessibility, we don't cut corners.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h4>Transparency</h4>
+          <p>Clear privacy policies, honest terms, and always-available support.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔬</div>
+          <h4>Innovation</h4>
+          <p>We leverage cutting-edge AI and modern frameworks to solve real problems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section id="services" class="section-wrapper">
+    <div class="section-label">What We Do</div>
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">From concept to the App Store — we handle every layer of the stack.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <h3>Mobile App Development</h3>
+        <p>Native iOS and cross-platform Flutter apps with premium UI, fluid performance, and App Store submission expertise.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>AI Integration</h3>
+        <p>Real-time voice processing, natural language understanding, and context-aware AI features powered by cutting-edge APIs.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3>Web Applications</h3>
+        <p>Secure, scalable, and responsive web platforms built with modern architecture and best-in-class deployment practices.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">☁️</div>
+        <h3>Cloud & API Design</h3>
+        <p>Stateless, secure backend endpoints and cloud infrastructure designed for reliability under real-world loads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LEGAL LINKS ===================== -->
+  <section id="legal" class="section-wrapper legal-section">
+    <div class="legal-grid">
+      <div class="legal-block">
+        <h3>Alo Translate — Legal</h3>
+        <p>Access privacy policies, terms of service, and support resources for the Alo Translate app.</p>
+        <div class="legal-links">
+          <a href="privacy.html">📄 Privacy Policy</a>
+          <a href="terms.html">⚖️ Terms of Use</a>
+          <a href="support.html">🛟 Support &amp; FAQs</a>
+        </div>
+      </div>
+      <div class="legal-block">
+        <h3>Contact &amp; Support</h3>
+        <p>Questions, feedback, or technical issues? Our team is responsive and ready to help.</p>
+        <div class="legal-links">
+          <a href="mailto:raymoon.code@gmail.com">📧 raymoon.code@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section-wrapper">
+    <div class="section-label">Get In Touch</div>
+    <h2 class="section-title">Let's Talk</h2>
+    <p class="section-sub">Have a project idea, a support question, or just want to say hello? Drop us a message.</p>
+    <div class="contact-card">
+      <div class="contact-info-col">
+        <h3>We'd love to hear from you</h3>
+        <p>Whether you're a potential collaborator, an app user needing help, or someone with an idea — reach out and we'll respond promptly.</p>
+        <div class="contact-detail">
+          <span class="cd-icon">📧</span>
+          <div>
+            <span class="cd-label">General Inquiries</span>
+            <a href="mailto:raymoon.code@gmail.com" class="cd-value">raymoon.code@gmail.com</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="cd-icon">🛟</span>
+          <div>
+            <span class="cd-label">App Support</span>
+            <a href="support.html" class="cd-value">Visit Support Page →</a>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="contactSubject">Subject</label>
+          <input type="text" id="contactSubject" name="subject" placeholder="How can we help?">
+        </div>
+        <div class="form-group">
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" placeholder="Tell us what's on your mind..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit" id="submitBtn">Send Message</button>
+        <p class="form-note" id="formNote" style="display:none;"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="brand">
+          <div class="brand-mark sm">M</div>
+          <div class="brand-text">
+            <span class="brand-name">Moonray</span>
+            <span class="brand-tagline">LLC</span>
+          </div>
+        </div>
+        <p>Crafting intelligent apps with care.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="#apps">Alo Translate</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Alo Translate</h5>
+          <a href="support.html">Support</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Moonray LLC. All rights reserved.</p>
+      <p>Designed &amp; built with ❤️ by Moonray LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    function closeMobileMenu() {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    }
+
+    // Sticky header shadow & scroll progress bar on scroll
+    const header = document.querySelector('header');
+    const scrollProgress = document.getElementById('scrollProgress');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgress.style.width = scrolled + "%";
+    });
+
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.app-card, .service-card, .value-card, .float-card, .legal-block').forEach(el => {
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
+
+    // Contact form handler (mailto fallback)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('contactName').value;
+      const email = document.getElementById('contactEmail').value;
+      const subject = document.getElementById('contactSubject').value || 'Moonray LLC Inquiry';
+      const message = document.getElementById('contactMessage').value;
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      const mailtoLink = `mailto:raymoon.code@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+      const note = document.getElementById('formNote');
+      note.textContent = '✅ Your email client should open now. If not, email us directly at raymoon.code@gmail.com';
+      note.style.display = 'block';
+      note.style.color = '#34d399';
+    }
+  </script>
 </body>
 </html>
