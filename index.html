@@ -14,6 +14,7 @@
 
   <!-- ===================== HEADER ===================== -->
   <header id="top">
+    <div class="scroll-progress" id="scrollProgress"></div>
     <div class="header-inner">
       <a href="#top" class="brand">
         <div class="brand-mark">M</div>
@@ -69,6 +70,74 @@
       </div>
     </div>
     <div class="hero-visual">
+      <!-- Ambient light effect behind the phone -->
+      <div class="mockup-glow"></div>
+      
+      <!-- Phone Frame Mockup -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <!-- Status Bar -->
+          <div class="phone-status-bar">
+            <span class="time">9:41</span>
+            <div class="icons">
+              <span class="signal">📶</span>
+              <span class="battery">🔋</span>
+            </div>
+          </div>
+          
+          <!-- App Header -->
+          <div class="phone-app-header">
+            <div class="app-brand">
+              <img src="logo/alo_translate_logo.png" alt="Alo Logo" class="app-logo">
+              <div class="app-title-group">
+                <span class="app-title">Alo Translate</span>
+                <span class="app-status">Listening...</span>
+              </div>
+            </div>
+            <div class="recording-indicator">
+              <span class="pulse-dot"></span>
+            </div>
+          </div>
+          
+          <!-- Chat Feed -->
+          <div class="phone-chat-feed">
+            <div class="chat-date">Today</div>
+            
+            <div class="chat-bubble user">
+              <div class="bubble-meta">
+                <span class="bubble-lang">English (US)</span>
+                <span class="bubble-icon">🎙️</span>
+              </div>
+              <p class="bubble-text">Hello doctor, I have a sharp pain in my stomach.</p>
+            </div>
+            
+            <div class="chat-bubble ai">
+              <div class="bubble-meta">
+                <span class="bubble-lang">Spanish (ES)</span>
+                <span class="bubble-icon">🔊</span>
+              </div>
+              <p class="bubble-text">Hola doctor, tengo un dolor agudo en el estómago.</p>
+            </div>
+          </div>
+          
+          <!-- Waveform Animation -->
+          <div class="phone-wave-container">
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+            <div class="wave-bar"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Badges surrounding the phone -->
       <div class="float-card card-a">
         <span class="fc-icon">🌍</span>
         <span class="fc-label">40+ Languages</span>
@@ -130,11 +199,35 @@
       <!-- Placeholder for future app -->
       <div class="app-card coming-soon">
         <div class="app-card-inner">
-          <div class="cs-icon">🚀</div>
-          <h3>More Coming Soon</h3>
-          <p class="app-desc">We're actively developing new applications. Stay tuned for our next release.</p>
-          <a href="#contact" class="app-link-btn ghost" style="margin-top: auto;">Get Notified</a>
+          <div class="app-meta">
+            <div class="cs-icon-bg">
+              <span class="cs-icon">🚀</span>
+            </div>
+            <div class="app-info">
+              <h3>More Coming Soon</h3>
+              <p class="app-platform"><span class="platform-badge dev">In Development</span></p>
+            </div>
+          </div>
+          <p class="app-desc">
+            We are actively designing and engineering our next suite of intelligent tools. Focused on privacy, speed, and seamless integration.
+          </p>
+          
+          <div class="skeleton-grid">
+            <div class="skeleton-row">
+              <span class="sk-icon">🔒</span>
+              <div class="sk-lines"><div class="sk-line long"></div><div class="sk-line short"></div></div>
+            </div>
+            <div class="skeleton-row">
+              <span class="sk-icon">🧠</span>
+              <div class="sk-lines"><div class="sk-line medium"></div><div class="sk-line long"></div></div>
+            </div>
+          </div>
+          
+          <div class="app-links" style="margin-top: auto;">
+            <a href="#contact" class="app-link-btn primary-glow">Get Notified</a>
+          </div>
         </div>
+        <div class="app-card-glow bg-purple"></div>
       </div>
     </div>
   </section>
@@ -336,14 +429,20 @@
       mobileMenu.classList.remove('open');
     }
 
-    // Sticky header shadow on scroll
+    // Sticky header shadow & scroll progress bar on scroll
     const header = document.querySelector('header');
+    const scrollProgress = document.getElementById('scrollProgress');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
       }
+      
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      scrollProgress.style.width = scrolled + "%";
     });
 
     // Intersection Observer for fade-in animations
