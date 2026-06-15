@@ -3,142 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moonray LLC - App Builder</title>
+    <title>Moonray LLC - App Builder & Software Solutions</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Moonray LLC</h1>
-        <p>Innovative App Development Solutions</p>
+        <div class="logo-container">
+            <h1>Moonray LLC</h1>
+            <p>App Development Solutions</p>
+        </div>
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#alo-translate-support">Alo Translate Support</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#terms">Terms & Conditions</a></li>
+                <li><a href="#terms">Terms</a></li>
             </ul>
         </nav>
     </header>
     
     <section id="about">
         <h2>About Us</h2>
-        <p>Moonray LLC specializes in creating high-performance mobile and web applications tailored to your business needs.</p>
+        <p>Moonray LLC specializes in creating high-performance, responsive mobile and web applications tailored to your business needs. We translate complex software requirements into intuitive, elegant, and secure user experiences.</p>
     </section>
     
     <section id="services">
         <h2>Our Services</h2>
-        <ul>
-            <li>Custom Mobile App Development</li>
-            <li>Web Application Design</li>
-            <li>AI-Powered Chatbots</li>
-            <li>Cloud Integration Solutions</li>
-        </ul>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="icon">📱</span>
+                <h3>Custom Mobile Apps</h3>
+                <p>Native and cross-platform mobile app development tailored for iOS and Android with premium, fluid user interfaces.</p>
+            </div>
+            <div class="service-card">
+                <span class="icon">💻</span>
+                <h3>Web Applications</h3>
+                <p>Secure, scalable, and responsive web systems built using modern architectures and best deployment practices.</p>
+            </div>
+            <div class="service-card">
+                <span class="icon">🤖</span>
+                <h3>AI & Intelligent Tech</h3>
+                <p>Natural language processing, voice transcription, and context-aware conversational systems powered by advanced AI model APIs.</p>
+            </div>
+            <div class="service-card">
+                <span class="icon">☁️</span>
+                <h3>Cloud Infrastructures</h3>
+                <p>Robust server integrations, stateless endpoints, and secure API gateways designed to run seamlessly under heavy loads.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="alo-translate-support">
+        <h2>Alo Translate — Support & FAQs</h2>
+        <div class="faq-box">
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 30px; font-size: 16px;">
+                Find answers to common questions and review support details for the <strong>Alo Translate</strong> AI Voice Interpreter.
+            </p>
+            
+            <div class="faq-item">
+                <p class="faq-question">How does Alo Translate work?</p>
+                <p class="faq-answer">Alo Translate is an AI-powered voice interpreter. Simply choose your target language, tap a microphone button, and speak. The app transcribes, translates, and plays the audio translation aloud to facilitate seamless two-way conversations.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Is my personal information safe?</p>
+                <p class="faq-answer">Yes, absolutely. All personal profile information, such as your optional personal profile fields (Name, Date of Birth, Gender, etc.) and your conversation history, is stored securely and locally on your physical device. We do not store your data on external databases or servers.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Do I need an account to use the app?</p>
+                <p class="faq-answer">No account or login is required to use any translation features. The app is fully functional offline/locally for stored configurations, and uses transient, stateless APIs solely for voice-to-text and translation processing.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">How can I delete my data?</p>
+                <p class="faq-answer">You can easily wipe all of your data at any time. Open the profile sheet (person icon at the top right), navigate to the "Cài đặt chung" (General Settings) tab, and scroll to the bottom. Under "Account & Privacy", tap "Xóa tài khoản & Dữ liệu" (Delete Account & Data). This will completely and permanently clear all profiles and conversations from your device.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">What should I do if the translation fails?</p>
+                <p class="faq-answer">Ensure you have an active internet connection. If the issue persists, try speaking more clearly or checking that your microphone permissions are enabled in your device settings.</p>
+            </div>
+
+            <div class="support-banner">
+                <h4>Need additional support or have questions?</h4>
+                <p>Email our Alo Translate support team and we will get back to you shortly.</p>
+                <a href="mailto:raymoon.code@gmail.com" class="support-link" style="font-size: 16px;">Email: raymoon.code@gmail.com</a>
+                <p style="margin-top: 15px; font-size: 13px;"><a href="privacy.html" class="support-link">Read the Alo Translate Privacy Policy &rarr;</a></p>
+            </div>
+        </div>
     </section>
     
     <section id="contact">
         <h2>Contact Us</h2>
-        <form>
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <section id="alo-translate-support" style="text-align: left; max-width: 800px; margin: 0 auto; padding: 20px;">
-        <h2 style="text-align: center; color: #4a90e2;">Alo Translate - Support & FAQs</h2>
-        <p style="text-align: center; margin-bottom: 30px;">If you are using <strong>Alo Translate</strong>, here are the answers to frequently asked questions and how to request support.</p>
-        
-        <div class="faq-container">
-            <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <p><strong>1. How does Alo Translate work?</strong></p>
-                <p style="color: #555; margin-top: 5px;">Alo Translate is an AI-powered voice interpreter. Simply choose your target language, tap a microphone button, and speak. The app transcribes, translates, and plays the audio translation aloud to facilitate seamless two-way conversations.</p>
-            </div>
-            
-            <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <p><strong>2. Is my personal information safe?</strong></p>
-                <p style="color: #555; margin-top: 5px;">Yes, absolutely. All personal profile information, such as your optional personal profile fields (Name, Date of Birth, Gender, etc.) and your conversation history, is stored securely and locally on your physical device. We do not store your data on external databases or servers.</p>
-            </div>
-            
-            <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <p><strong>3. Do I need an account to use the app?</strong></p>
-                <p style="color: #555; margin-top: 5px;">No account or login is required to use any translation features. The app is fully functional offline/locally for stored configurations, and uses transient, stateless APIs solely for voice-to-text and translation processing.</p>
-            </div>
-            
-            <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <p><strong>4. How can I delete my data?</strong></p>
-                <p style="color: #555; margin-top: 5px;">You can easily wipe all of your data at any time. Open the profile sheet (person icon at the top right), navigate to the "Cài đặt chung" (General Settings) tab, and scroll to the bottom. Under "Account & Privacy", tap "Xóa tài khoản & Dữ liệu" (Delete Account & Data). This will completely and permanently clear all profiles and conversations from your device.</p>
-            </div>
-            
-            <div class="faq-item" style="margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <p><strong>5. What should I do if the translation fails?</strong></p>
-                <p style="color: #555; margin-top: 5px;">Ensure you have an active internet connection. If the issue persists, try speaking more clearly or checking that your microphone permissions are enabled in your device settings.</p>
-            </div>
-        </div>
-
-        <div style="margin-top: 30px; padding: 20px; background-color: #f5f7fa; border-radius: 8px; text-align: center;">
-            <p><strong>Need additional support?</strong></p>
-            <p style="font-size: 14px; margin-top: 5px; color: #555;">Email us at: <a href="mailto:raymoon.code@gmail.com">raymoon.code@gmail.com</a></p>
-            <p style="font-size: 14px; margin-top: 10px;"><a href="privacy.html" style="font-weight: bold; color: #4a90e2; text-decoration: underline;">Read the Alo Translate Privacy Policy</a></p>
+        <div class="contact-container">
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </div>
     </section>
     
     <section id="terms">
         <h2>Terms and Conditions</h2>
-        <p><strong>Last Updated: Feb 24 2025</strong></p>
-        <p>Please read these Terms and Conditions ("Terms") carefully before using the MoonMusicPlayer (the "App"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use the App.</p>
-        
-        <h3>1. Acceptance of Terms</h3>
-        <p>By accessing or using the App, you agree to comply with these Terms and all applicable laws and regulations governing the App.</p>
-        
-        <h3>2. Eligibility</h3>
-        <p>The App is intended for users aged 13 and older. If you are under the age of 13, you must have parental or guardian consent to use the App. We reserve the right to terminate accounts if users do not meet this requirement.</p>
-        
-        <h3>3. Account Registration</h3>
-        <p>To use certain features, you may be required to create an account. You are responsible for maintaining the confidentiality of your login credentials and any activity under your account.</p>
-        
-        <h3>4. Use of the App</h3>
-        <p>You agree not to misuse the App, including but not limited to:</p>
-        <ul>
-            <li>Engaging in unauthorized access, hacking, or tampering with App security.</li>
-            <li>Uploading malicious software, malware, or harmful content.</li>
-            <li>Violating any applicable laws or regulations.</li>
-        </ul>
-        
-        <h3>5. Content Ownership and Usage</h3>
-        <p>This app is not affiliated with, endorsed by, or associated with YouTube. All video content is provided by the YouTube API and is subject to YouTube’s Terms of Service.</p>
-        
-        <h3>6. User-Generated Content</h3>
-        <p>Users may submit content such as comments, responses, or feedback. By submitting content, you grant us a non-exclusive, royalty-free license to use, display, and distribute your content within the App. You must ensure your content does not violate any laws or third-party rights.</p>
-        
-        <h3>7. Privacy Policy</h3>
-        <p>Your use of the App is subject to our Privacy Policy. To learn how we collect, use, and protect your data, please review our <a href="https://raymoon-code.github.io/Moonray-App.co/#terms">Privacy Policy</a>.</p>
-        
-        <h3>8. Subscriptions and Payments</h3>
-        <p>Some features of the App may require a paid subscription. By subscribing, you agree to pay applicable fees, which may be billed on a recurring basis. Subscription cancellations must be managed through your account settings.</p>
-        
-        <h3>9. Termination of Use</h3>
-        <p>We reserve the right to terminate or suspend your account without notice if you violate these Terms or engage in activities that harm the App or other users.</p>
-        
-        <h3>10. Disclaimers</h3>
-        <p>The App is provided "as is" without any warranties. We do not guarantee that the App will always be available, secure, or error-free.</p>
-        
-        <h3>11. Limitation of Liability</h3>
-        <p>To the fullest extent permitted by law, we shall not be liable for any direct, indirect, or consequential damages arising from your use of the App.</p>
-        
-        <h3>12. Modifications to Terms</h3>
-        <p>We may update these Terms from time to time. Continued use of the App after changes are made constitutes acceptance of the updated Terms.</p>
-        
-        <h3>13. Governing Law</h3>
-        <p>These Terms are governed by the laws of [Your Country/State]. Any disputes shall be resolved in the appropriate courts of [Your Country/State].</p>
-        
-        <h3>14. Contact Us</h3>
-        <p>If you have any questions about these Terms, please contact us at <a href="mailto:raymooninvest@gmail.com">raymooninvest@gmail.com</a>.</p>
+        <div class="terms-box">
+            <p><strong>Last Updated: Feb 24 2025</strong></p>
+            <p>Please read these Terms and Conditions ("Terms") carefully before using the MoonMusicPlayer (the "App"). By accessing or using the App, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use the App.</p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing or using the App, you agree to comply with these Terms and all applicable laws and regulations governing the App.</p>
+            
+            <h3>2. Eligibility</h3>
+            <p>The App is intended for users aged 13 and older. If you are under the age of 13, you must have parental or guardian consent to use the App. We reserve the right to terminate accounts if users do not meet this requirement.</p>
+            
+            <h3>3. Account Registration</h3>
+            <p>To use certain features, you may be required to create an account. You are responsible for maintaining the confidentiality of your login credentials and any activity under your account.</p>
+            
+            <h3>4. Use of the App</h3>
+            <p>You agree not to misuse the App, including but not limited to:</p>
+            <ul>
+                <li>Engaging in unauthorized access, hacking, or tampering with App security.</li>
+                <li>Uploading malicious software, malware, or harmful content.</li>
+                <li>Violating any applicable laws or regulations.</li>
+            </ul>
+            
+            <h3>5. Content Ownership and Usage</h3>
+            <p>This app is not affiliated with, endorsed by, or associated with YouTube. All video content is provided by the YouTube API and is subject to YouTube’s Terms of Service.</p>
+            
+            <h3>6. User-Generated Content</h3>
+            <p>Users may submit content such as comments, responses, or feedback. By submitting content, you grant us a non-exclusive, royalty-free license to use, display, and distribute your content within the App. You must ensure your content does not violate any laws or third-party rights.</p>
+            
+            <h3>7. Privacy Policy</h3>
+            <p>Your use of the App is subject to our Privacy Policy. To learn how we collect, use, and protect your data, please review our <a href="https://raymoon-code.github.io/Moonray-App.co/#terms">Privacy Policy</a>.</p>
+            
+            <h3>8. Subscriptions and Payments</h3>
+            <p>Some features of the App may require a paid subscription. By subscribing, you agree to pay applicable fees, which may be billed on a recurring basis. Subscription cancellations must be managed through your account settings.</p>
+            
+            <h3>9. Termination of Use</h3>
+            <p>We reserve the right to terminate or suspend your account without notice if you violate these Terms or engage in activities that harm the App or other users.</p>
+            
+            <h3>10. Disclaimers</h3>
+            <p>The App is provided "as is" without any warranties. We do not guarantee that the App will always be available, secure, or error-free.</p>
+            
+            <h3>11. Limitation of Liability</h3>
+            <p>To the fullest extent permitted by law, we shall not be liable for any direct, indirect, or consequential damages arising from your use of the App.</p>
+            
+            <h3>12. Modifications to Terms</h3>
+            <p>We may update these Terms from time to time. Continued use of the App after changes are made constitutes acceptance of the updated Terms.</p>
+            
+            <h3>13. Governing Law</h3>
+            <p>These Terms are governed by the laws of [Your Country/State]. Any disputes shall be resolved in the appropriate courts of [Your Country/State].</p>
+            
+            <h3>14. Contact Us</h3>
+            <p>If you have any questions about these Terms, please contact us at <a href="mailto:raymooninvest@gmail.com">raymooninvest@gmail.com</a>.</p>
+        </div>
     </section>
     
     <footer>
-        <p>&copy; 2025 Moonray LLC. All Rights Reserved.</p>
+        <p>&copy; 2026 Moonray LLC. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
