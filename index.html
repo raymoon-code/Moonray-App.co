@@ -204,9 +204,7 @@
       <div class="app-card">
         <div class="app-card-inner">
           <div class="app-meta">
-            <div class="cs-icon-bg" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
-              <span class="cs-icon">🎵</span>
-            </div>
+            <img src="logo/musimoon_logo.png" alt="Musimoon App Icon" class="app-icon">
             <div class="app-info">
               <h3>Musimoon</h3>
               <p class="app-platform">
@@ -235,6 +233,41 @@
           </div>
         </div>
         <div class="app-card-glow bg-purple"></div>
+      </div>
+
+      <!-- PhoneToTV -->
+      <div class="app-card">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <img src="logo/phonetotv_logo.png" alt="PhoneToTV App Icon" class="app-icon">
+            <div class="app-info">
+              <h3>PhoneToTV</h3>
+              <p class="app-platform">
+                <span class="platform-badge ios">iOS</span>
+                <span class="platform-badge tv">Smart TV</span>
+              </p>
+            </div>
+            <span class="app-status live">Live</span>
+          </div>
+          <p class="app-desc">
+            Seamless media casting and screen mirroring application to cast photos, videos, and web streams from iPhone/iPad directly to Smart TVs (Samsung Tizen, LG webOS, Roku, Fire TV).
+          </p>
+          <ul class="app-features">
+            <li>📺 HD Screen Mirroring & Video Casting</li>
+            <li>📶 Zero-latency local network discovery</li>
+            <li>🎵 Web video stream cast & photo slideshows</li>
+            <li>📱 Universal Smart TV protocol support</li>
+          </ul>
+          <div class="app-links">
+            <a href="https://github.com/raymoon-code/PhoneToTV" target="_blank" class="app-link-btn primary-glow">
+              GitHub Repo ↗
+            </a>
+            <a href="privacy.html" class="app-link-btn ghost">
+              Privacy Policy
+            </a>
+          </div>
+        </div>
+        <div class="app-card-glow"></div>
       </div>
 
       <!-- Moonray Dashboard -->
@@ -550,6 +583,18 @@
       el.classList.add('animate-on-scroll');
       observer.observe(el);
     });
+
+    // Reveal elements in initial viewport immediately on load
+    const checkInitialViewport = () => {
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    };
+    checkInitialViewport();
+    window.addEventListener('load', checkInitialViewport);
 
     // Contact form handler (mailto fallback)
     function handleFormSubmit(e) {
