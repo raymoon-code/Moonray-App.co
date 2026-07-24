@@ -49,6 +49,7 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="hero">
+    <canvas id="particle-canvas"></canvas>
     <div class="hero-bg-glow glow-1"></div>
     <div class="hero-bg-glow glow-2"></div>
     <div class="hero-content">
@@ -61,7 +62,7 @@
         <span class="gradient-text">Feel Like Magic</span>
       </h1>
       <p class="hero-sub">
-        Moonray LLC builds elegant, AI-powered mobile experiences with privacy at their core.<br>
+        Moonray LLC builds elegant, AI-powered mobile and web experiences with privacy at their core.<br>
         Thoughtfully designed. Precisely engineered.
       </p>
       <div class="hero-actions">
@@ -157,7 +158,7 @@
   <section id="apps" class="section-wrapper">
     <div class="section-label">Our Products</div>
     <h2 class="section-title">Apps We've Built</h2>
-    <p class="section-sub">Premium mobile applications designed for real people solving real problems.</p>
+    <p class="section-sub">Premium mobile and web applications designed for real people solving real problems.</p>
 
     <div class="apps-grid">
       <!-- Alo Translate -->
@@ -185,6 +186,9 @@
             <li>👤 Multi-profile support</li>
           </ul>
           <div class="app-links">
+            <a href="https://apps.apple.com/us/app/alo-translate/id6778566552" target="_blank" class="app-link-btn primary-glow">
+              Get on App Store ↗
+            </a>
             <a href="support.html" class="app-link-btn secondary">
               Support &amp; FAQs
             </a>
@@ -196,12 +200,109 @@
         <div class="app-card-glow"></div>
       </div>
 
-      <!-- Placeholder for future app -->
+      <!-- Musimoon -->
+      <div class="app-card">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <div class="cs-icon-bg" style="background: linear-gradient(135deg, rgba(59,130,246,0.2), rgba(139,92,246,0.2));">
+              <span class="cs-icon">🎵</span>
+            </div>
+            <div class="app-info">
+              <h3>Musimoon</h3>
+              <p class="app-platform">
+                <span class="platform-badge web">Web App</span>
+                <span class="platform-badge ios">iOS</span>
+              </p>
+            </div>
+            <span class="app-status live">Live</span>
+          </div>
+          <p class="app-desc">
+            High-fidelity web and mobile music player featuring YouTube API integration, custom playlists, seamless audio streaming, and a responsive glassmorphism UI.
+          </p>
+          <ul class="app-features">
+            <li>🎵 YouTube API audio stream integration</li>
+            <li>🎧 Smart playlist creation & queueing</li>
+            <li>⚡ Built with React, TypeScript & Vite</li>
+            <li>☁️ Supabase cloud synchronization</li>
+          </ul>
+          <div class="app-links">
+            <a href="https://musimoon.moonray.store/musimoon" target="_blank" class="app-link-btn primary-glow">
+              Live Web App ↗
+            </a>
+            <a href="https://apps.apple.com/us/app/musimoon-player-playlists/id6741814032" target="_blank" class="app-link-btn secondary">
+              App Store ↗
+            </a>
+          </div>
+        </div>
+        <div class="app-card-glow bg-purple"></div>
+      </div>
+
+      <!-- Moonray Dashboard -->
+      <div class="app-card">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <div class="cs-icon-bg" style="background: linear-gradient(135deg, rgba(240,111,187,0.2), rgba(124,109,250,0.2));">
+              <span class="cs-icon">⚡</span>
+            </div>
+            <div class="app-info">
+              <h3>Moonray Dashboard</h3>
+              <p class="app-platform">
+                <span class="platform-badge web">Web</span>
+              </p>
+            </div>
+            <span class="app-status dev">Production</span>
+          </div>
+          <p class="app-desc">
+            Real-time analytics and business intelligence platform designed for modern teams who need instant clarity on performance and system metrics.
+          </p>
+          <ul class="app-features">
+            <li>📊 Real-time telemetry & metric tracking</li>
+            <li>🔔 Instant alerts & workflow triggers</li>
+            <li>🔒 Enterprise-grade encryption & security</li>
+          </ul>
+          <div class="app-links">
+            <a href="privacy.html" class="app-link-btn ghost">Privacy Policy</a>
+          </div>
+        </div>
+        <div class="app-card-glow"></div>
+      </div>
+
+      <!-- Moonray AI -->
+      <div class="app-card">
+        <div class="app-card-inner">
+          <div class="app-meta">
+            <div class="cs-icon-bg" style="background: linear-gradient(135deg, rgba(79,209,199,0.2), rgba(124,109,250,0.2));">
+              <span class="cs-icon">🚀</span>
+            </div>
+            <div class="app-info">
+              <h3>Moonray AI</h3>
+              <p class="app-platform">
+                <span class="platform-badge dev">Beta</span>
+              </p>
+            </div>
+            <span class="app-status dev">In Development</span>
+          </div>
+          <p class="app-desc">
+            Intelligent AI assistant platform embedded directly into enterprise workflows. Automate tasks, summarize documents, and generate content effortlessly.
+          </p>
+          <ul class="app-features">
+            <li>🤖 Multi-LLM model routing</li>
+            <li>📄 Context-aware document processing</li>
+            <li>⚡ Automated n8n workflow integration</li>
+          </ul>
+          <div class="app-links">
+            <a href="#contact" class="app-link-btn primary-glow">Join Waitlist</a>
+          </div>
+        </div>
+        <div class="app-card-glow bg-purple"></div>
+      </div>
+
+      <!-- More Coming Soon -->
       <div class="app-card coming-soon">
         <div class="app-card-inner">
           <div class="app-meta">
             <div class="cs-icon-bg">
-              <span class="cs-icon">🚀</span>
+              <span class="cs-icon">✨</span>
             </div>
             <div class="app-info">
               <h3>More Coming Soon</h3>
@@ -211,17 +312,6 @@
           <p class="app-desc">
             We are actively designing and engineering our next suite of intelligent tools. Focused on privacy, speed, and seamless integration.
           </p>
-          
-          <div class="skeleton-grid">
-            <div class="skeleton-row">
-              <span class="sk-icon">🔒</span>
-              <div class="sk-lines"><div class="sk-line long"></div><div class="sk-line short"></div></div>
-            </div>
-            <div class="skeleton-row">
-              <span class="sk-icon">🧠</span>
-              <div class="sk-lines"><div class="sk-line medium"></div><div class="sk-line long"></div></div>
-            </div>
-          </div>
           
           <div class="app-links" style="margin-top: auto;">
             <a href="#contact" class="app-link-btn primary-glow">Get Notified</a>
@@ -475,6 +565,56 @@
       note.textContent = '✅ Your email client should open now. If not, email us directly at raymoon.code@gmail.com';
       note.style.display = 'block';
       note.style.color = '#34d399';
+    }
+
+    // Particle Canvas Animation
+    const pCanvas = document.getElementById('particle-canvas');
+    if (pCanvas) {
+      const pCtx = pCanvas.getContext('2d');
+      const resizeCanvas = () => {
+        pCanvas.width = pCanvas.parentElement ? pCanvas.parentElement.offsetWidth : window.innerWidth;
+        pCanvas.height = pCanvas.parentElement ? pCanvas.parentElement.offsetHeight : window.innerHeight;
+      };
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      const particles = Array.from({length: 45}, () => ({
+        x: Math.random() * pCanvas.width,
+        y: Math.random() * pCanvas.height,
+        r: Math.random() * 1.5 + 0.5,
+        dx: (Math.random() - 0.5) * 0.3,
+        dy: (Math.random() - 0.5) * 0.3,
+        a: Math.random(),
+      }));
+
+      function drawParticles() {
+        pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+        particles.forEach(p => {
+          pCtx.beginPath();
+          pCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          pCtx.fillStyle = `rgba(96,165,250,${p.a * 0.4})`;
+          pCtx.fill();
+          p.x += p.dx; p.y += p.dy;
+          if (p.x < 0 || p.x > pCanvas.width) p.dx *= -1;
+          if (p.y < 0 || p.y > pCanvas.height) p.dy *= -1;
+        });
+
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+            if (dist < 110) {
+              pCtx.beginPath();
+              pCtx.moveTo(particles[i].x, particles[i].y);
+              pCtx.lineTo(particles[j].x, particles[j].y);
+              pCtx.strokeStyle = `rgba(96,165,250,${(1 - dist/110) * 0.12})`;
+              pCtx.lineWidth = 0.5;
+              pCtx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
     }
   </script>
 </body>
