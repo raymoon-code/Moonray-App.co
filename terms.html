@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alo Translate — Terms of Use | Moonray LLC</title>
-  <meta name="description" content="Alo Translate Terms of Use. Review our service conditions, limitations, and user responsibilities.">
+  <title>Terms of Use | Moonray LLC Apps</title>
+  <meta name="description" content="Terms of Use for MusiMoon, PhoneToTV, Alo Translate, and all Moonray LLC software applications.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
     .page-hero {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 32px 60px;
+      padding: 80px 32px 40px;
       display: flex;
       align-items: center;
       gap: 24px;
@@ -24,6 +24,7 @@
       border-radius: 20px;
       flex-shrink: 0;
       box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
     }
     .page-hero h1 {
       font-size: clamp(30px, 5vw, 48px);
@@ -32,16 +33,56 @@
       line-height: 1.1;
     }
     .page-hero p { font-size: 16px; color: var(--text-2); margin-top: 8px; }
+    .app-switcher {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 32px;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .app-tab {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-2);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .app-tab:hover { border-color: var(--blue-light); color: var(--text); }
+    .app-tab.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    }
+    .app-tab-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
     .page-body {
-      max-width: 800px;
+      max-width: 840px;
       margin: 0 auto;
       padding: 0 32px 100px;
     }
+    .app-content-group { display: none; }
+    .app-content-group.active { display: block; }
     .policy-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 40px;
+      padding: 36px;
       margin-bottom: 20px;
       transition: var(--transition);
     }
@@ -69,11 +110,7 @@
       flex-direction: column;
       gap: 8px;
     }
-    .policy-card li {
-      font-size: 14px;
-      color: var(--text-2);
-      line-height: 1.7;
-    }
+    .policy-card li { font-size: 14px; color: var(--text-2); line-height: 1.7; }
     .policy-card strong { color: var(--text); }
     .policy-highlight {
       background: rgba(59,130,246,0.07);
@@ -100,7 +137,8 @@
       margin-bottom: 40px;
     }
     @media (max-width: 600px) {
-      .page-hero { flex-direction: column; padding: 50px 20px 40px; }
+      .page-hero { flex-direction: column; padding: 50px 20px 30px; }
+      .app-switcher { padding: 0 20px 80px; }
       .page-body { padding: 0 20px 80px; }
       .policy-card { padding: 24px 20px; }
     }
@@ -122,6 +160,7 @@
           <li><a href="index.html#apps">Apps</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="support.html">Support</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
@@ -130,82 +169,91 @@
   </header>
 
   <div class="page-hero">
-    <img src="logo/alo_translate_logo.png" alt="Alo Translate" class="page-hero-icon">
+    <img src="logo/musimoon_logo.png" alt="App Logo" class="page-hero-icon" id="heroIcon">
     <div>
-      <div class="section-label" style="margin-bottom:8px;">Alo Translate</div>
+      <div class="section-label" style="margin-bottom:8px;" id="heroAppLabel">MusiMoon Player</div>
       <h1>Terms of <span class="gradient-text">Use</span></h1>
-      <p>Please review the terms and disclaimers for using our application.</p>
+      <p id="heroAppSub">Terms and conditions for using our software products.</p>
     </div>
+  </div>
+
+  <!-- App Switcher Tabs -->
+  <div class="app-switcher">
+    <button class="app-tab active" onclick="switchApp('musimoon')">
+      <img src="logo/musimoon_logo.png" alt="MusiMoon" class="app-tab-icon">
+      MusiMoon Player
+    </button>
+    <button class="app-tab" onclick="switchApp('alo_translate')">
+      <img src="logo/alo_translate_logo.png" alt="Alo Translate" class="app-tab-icon">
+      Alo Translate
+    </button>
+    <button class="app-tab" onclick="switchApp('phonetotv')">
+      <img src="logo/phonetotv_logo.png" alt="PhoneToTV" class="app-tab-icon">
+      PhoneToTV
+    </button>
+    <button class="app-tab" onclick="switchApp('general')">
+      <span>🚀</span> Moonray Suite
+    </button>
   </div>
 
   <div class="page-body">
 
-    <div style="text-align:center; margin-bottom: 48px;">
+    <div style="text-align:center; margin-bottom: 32px;">
       <span class="effective-date">✅ Effective Date: June 15, 2026</span>
     </div>
 
-    <!-- 1. Overview -->
-    <div class="policy-card animate-on-scroll">
-      <h2>1. Acceptance of Terms</h2>
-      <div class="policy-highlight">
-        <strong>Short version:</strong> By using Alo Translate, you agree to these terms. Since your profiles and translation histories are stored exclusively on your device, you are responsible for maintaining your device security.
+    <!-- ==================================== MUSIMOON TERMS ==================================== -->
+    <div id="content-musimoon" class="app-content-group active">
+      <div class="policy-card animate-on-scroll">
+        <h2>1. MusiMoon License &amp; Usage</h2>
+        <div class="policy-highlight">
+          <strong>Short Version:</strong> MusiMoon is provided for personal offline music playback. You are responsible for ensuring you have legal rights to the audio files played in the app.
+        </div>
+        <p>Moonray LLC grants you a personal, non-exclusive, non-transferable license to use MusiMoon Player on your Apple iOS devices in compliance with Apple App Store terms.</p>
       </div>
-      <p>Alo Translate is a product of Moonray LLC ("we", "our", or "us"). By downloading, installing, or using the Alo Translate mobile application ("the App"), you agree to be bound by these Terms of Use. If you do not agree, please do not use the App.</p>
+
+      <div class="policy-card animate-on-scroll">
+        <h2>2. Media Ownership &amp; Copyright</h2>
+        <p>MusiMoon is a local audio playback tool. Users must own or possess copyright authorization for any audio files imported into the app. Moonray LLC does not host, distribute, or pirate copyrighted music tracks.</p>
+      </div>
     </div>
 
-    <!-- 2. License and Scope -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.07s">
-      <h2>2. License to Use</h2>
-      <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the App on your mobile device for personal or professional translation and interpretation purposes in accordance with these Terms.</p>
-      <p>You agree not to modify, reverse engineer, decompile, or copy the App's source code, assets, or interfaces without our prior written consent.</p>
+    <!-- ==================================== ALO TRANSLATE TERMS ==================================== -->
+    <div id="content-alo_translate" class="app-content-group">
+      <div class="policy-card animate-on-scroll">
+        <h2>1. Alo Translate Usage &amp; Disclaimer</h2>
+        <div class="policy-highlight">
+          <strong>Short Version:</strong> Alo Translate assists with voice translation. AI translations should not be used as official court, medical, or legal certification.
+        </div>
+        <p>Alo Translate provides AI-assisted voice interpretation. Users agree not to rely solely on machine translations for critical medical, legal, or financial contracts.</p>
+      </div>
     </div>
 
-    <!-- 3. Local Data Responsibility -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.14s">
-      <h2>3. On-Device Data and Security</h2>
-      <p><strong>All profiles, personal details, and histories generated in the App are stored solely on your device.</strong> We do not operate server-side databases of your personal profiles. You are fully responsible for:</p>
-      <ul>
-        <li>Maintaining the physical security and passcode protection of your device.</li>
-        <li>Understanding that deleting the App or resetting your data permanently deletes all your profiles, which we cannot recover for you.</li>
-      </ul>
+    <!-- ==================================== PHONETOTV TERMS ==================================== -->
+    <div id="content-phonetotv" class="app-content-group">
+      <div class="policy-card animate-on-scroll">
+        <h2>1. PhoneToTV Streaming License</h2>
+        <div class="policy-highlight">
+          <strong>Short Version:</strong> PhoneToTV connects your mobile device to Smart TVs over your local home network. Wi-Fi performance depends on your local router.
+        </div>
+        <p>PhoneToTV grants a non-transferable license to stream personal photos, videos, and web content to compatible DLNA and Smart TV receivers.</p>
+      </div>
     </div>
 
-    <!-- 4. Accuracy & Professional Disclaimer -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.21s">
-      <h2>4. Translation Accuracy &amp; Disclaimers</h2>
-      <p>Alo Translate utilizes advanced artificial intelligence models to assist with real-time translations. While we strive to provide high-quality and context-aware results, AI translations can contain errors, misinterpretations, or contextual discrepancies.</p>
-      <p><strong>IMPORTANT DISCLAIMER:</strong> The App is provided for convenience and communication support. It is <strong>NOT</strong> a substitute for professional human interpreters. Do not rely solely on the App for critical decisions in:</p>
-      <ul>
-        <li><strong>Medical Settings:</strong> Diagnosis, prescription, or surgery consent.</li>
-        <li><strong>Legal Settings:</strong> Court hearings, legal consultations, or contract reviews.</li>
-        <li><strong>Financial &amp; Tax Settings:</strong> Tax preparation or official government audits.</li>
-      </ul>
-      <p>Any reliance on translations provided by the App is entirely at your own risk.</p>
+    <!-- ==================================== GENERAL TERMS ==================================== -->
+    <div id="content-general" class="app-content-group">
+      <div class="policy-card animate-on-scroll">
+        <h2>1. General Terms for Moonray LLC Products</h2>
+        <p>All software published by Moonray LLC is provided "as is". Moonray LLC shall not be liable for indirect or consequential damages arising from app usage.</p>
+        <p>Questions regarding these terms can be directed to <a href="mailto:raymooninvest@gmail.com" style="color:var(--blue-light); font-weight:700;">raymooninvest@gmail.com</a>.</p>
+      </div>
     </div>
 
-    <!-- 5. Service Constraints -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.28s">
-      <h2>5. API Usage and Availability</h2>
-      <p>Real-time speech-to-text and translation features require connection to secure third-party translation APIs. The App is provided on an "as is" and "as available" basis. We do not guarantee uninterrupted, lag-free, or error-free access to translation services, which may vary based on your network connectivity and API partner status.</p>
-    </div>
-
-    <!-- 6. Limitation of Liability -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.35s">
-      <h2>6. Limitation of Liability</h2>
-      <p>To the maximum extent permitted by applicable law, Moonray LLC and its developers shall not be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with your use or inability to use the App, even if we have been advised of the possibility of such damages.</p>
-    </div>
-
-    <!-- 7. Changes to Terms -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.42s">
-      <h2>7. Changes to These Terms</h2>
-      <p>We reserve the right to modify these Terms of Use at any time. Updates will be reflected in the App with an updated effective date. Continued use of the App after updates constitute acceptance of the revised terms.</p>
-    </div>
-
-    <!-- 8. Contact -->
-    <div class="policy-card animate-on-scroll" style="transition-delay:0.49s">
-      <h2>8. Contact Us</h2>
-      <p>If you have any questions or concerns regarding these Terms of Use, please contact us:</p>
-      <p>
+    <!-- Contact Block -->
+    <div class="policy-card animate-on-scroll" style="margin-top:32px;">
+      <h2>Contact Us Regarding Terms</h2>
+      <p>If you have any questions regarding these Terms of Use across any Moonray LLC app, please contact us:</p>
+      <p style="margin-top:10px;">
         <a href="mailto:raymooninvest@gmail.com" style="color: var(--blue-light); font-weight: 700;">📧 raymooninvest@gmail.com</a>
       </p>
     </div>
@@ -227,7 +275,9 @@
       <div class="footer-links">
         <div class="footer-col">
           <h5>Products</h5>
+          <a href="index.html#apps">MusiMoon Player</a>
           <a href="index.html#apps">Alo Translate</a>
+          <a href="index.html#apps">PhoneToTV</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
@@ -235,8 +285,8 @@
           <a href="index.html#contact">Contact</a>
         </div>
         <div class="footer-col">
-          <h5>Alo Translate</h5>
-          <a href="support.html">Support</a>
+          <h5>Legal &amp; Support</h5>
+          <a href="support.html">Support &amp; FAQs</a>
           <a href="privacy.html">Privacy Policy</a>
           <a href="terms.html">Terms of Use</a>
         </div>
@@ -249,6 +299,57 @@
   </footer>
 
   <script>
+    const appData = {
+      musimoon: {
+        name: "MusiMoon Player",
+        sub: "Terms and condition disclaimers for MusiMoon Player.",
+        logo: "logo/musimoon_logo.png"
+      },
+      alo_translate: {
+        name: "Alo Translate",
+        sub: "Terms of use and translation disclaimers for Alo Translate.",
+        logo: "logo/alo_translate_logo.png"
+      },
+      phonetotv: {
+        name: "PhoneToTV",
+        sub: "Terms of use for PhoneToTV screen mirroring & DLNA casting.",
+        logo: "logo/phonetotv_logo.png"
+      },
+      general: {
+        name: "Moonray LLC Suite",
+        sub: "General terms of use for all Moonray LLC products.",
+        logo: "logo/musimoon_logo.png"
+      }
+    };
+
+    function switchApp(appKey) {
+      document.querySelectorAll('.app-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.app-content-group').forEach(group => group.classList.remove('active'));
+
+      const activeGroup = document.getElementById('content-' + appKey);
+      if (activeGroup) activeGroup.classList.add('active');
+
+      const info = appData[appKey] || appData.musimoon;
+      document.getElementById('heroAppLabel').textContent = info.name;
+      document.getElementById('heroAppSub').textContent = info.sub;
+      document.getElementById('heroIcon').src = info.logo;
+
+      const buttons = document.querySelectorAll('.app-tab');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(appKey)) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const appParam = urlParams.get('app') || window.location.hash.replace('#', '');
+      if (appParam && appData[appParam]) {
+        switchApp(appParam);
+      }
+    });
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
