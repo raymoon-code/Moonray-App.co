@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & FAQs | Moonray LLC Apps</title>
+  <meta name="description" content="Official Support and Frequently Asked Questions for MusiMoon, Alo Translate, PhoneToTV, and all Moonray LLC applications.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .page-hero-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      flex-shrink: 0;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .page-hero h1 {
+      font-size: clamp(30px, 5vw, 48px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+    }
+    .page-hero p {
+      font-size: 16px;
+      color: var(--text-2);
+      margin-top: 8px;
+    }
+    .app-switcher {
+      max-width: 1200px;
+      margin: 0 auto 40px;
+      padding: 0 32px;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .app-tab {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-2);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+    .app-tab:hover {
+      border-color: var(--blue-light);
+      color: var(--text);
+    }
+    .app-tab.active {
+      background: var(--blue);
+      border-color: var(--blue);
+      color: white;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+    }
+    .app-tab-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .page-body {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px 100px;
+    }
+    .app-content-group {
+      display: none;
+    }
+    .app-content-group.active {
+      display: block;
+    }
+    .faq-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .faq-section-header {
+      padding: 24px 32px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-section-header .icon { font-size: 22px; }
+    .faq-section-header h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .faq-list { padding: 8px 0; }
+    .faq-item {
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-item:hover { background: var(--surface-hover); }
+    .faq-question {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+    }
+    .faq-chevron {
+      font-size: 12px;
+      color: var(--text-3);
+      transition: transform 0.25s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      font-size: 14px;
+      color: var(--text-2);
+      line-height: 1.75;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-top: 12px;
+    }
+    .contact-strip {
+      background: linear-gradient(135deg, rgba(59,130,246,0.08) 0%, rgba(139,92,246,0.08) 100%);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+    .contact-strip h3 { font-size: 22px; font-weight: 800; margin-bottom: 10px; }
+    .contact-strip p { font-size: 15px; color: var(--text-2); margin-bottom: 24px; }
+    .contact-strip .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      .page-hero { flex-direction: column; padding: 50px 20px 30px; }
+      .app-switcher { padding: 0 20px 80px; }
+      .page-hero-icon { width: 64px; height: 64px; }
+      .page-body { padding: 0 20px 80px; }
+      .faq-section-header { padding: 20px 20px; }
+      .faq-item { padding: 16px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="top">
+    <div class="header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-mark">M</div>
+        <div class="brand-text">
+          <span class="brand-name">Moonray</span>
+          <span class="brand-tagline">LLC</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html#apps">Apps</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="mailto:raymooninvest@gmail.com" class="nav-cta">Email Support</a>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <img src="logo/musimoon_logo.png" alt="App Logo" class="page-hero-icon" id="heroIcon">
+    <div>
+      <div class="section-label" style="margin-bottom:8px;" id="heroAppLabel">MusiMoon Player</div>
+      <h1>Help <span class="gradient-text">&amp; Support</span></h1>
+      <p id="heroAppSub">Everything you need to know about using MusiMoon Player.</p>
+    </div>
+  </div>
+
+  <!-- App Switcher Tabs -->
+  <div class="app-switcher">
+    <button class="app-tab active" onclick="switchApp('musimoon')">
+      <img src="logo/musimoon_logo.png" alt="MusiMoon" class="app-tab-icon">
+      MusiMoon Player
+    </button>
+    <button class="app-tab" onclick="switchApp('alo_translate')">
+      <img src="logo/alo_translate_logo.png" alt="Alo Translate" class="app-tab-icon">
+      Alo Translate
+    </button>
+    <button class="app-tab" onclick="switchApp('phonetotv')">
+      <img src="logo/phonetotv_logo.png" alt="PhoneToTV" class="app-tab-icon">
+      PhoneToTV
+    </button>
+    <button class="app-tab" onclick="switchApp('general')">
+      <span>🚀</span> Moonray Suite
+    </button>
+  </div>
+
+  <div class="page-body">
+
+    <!-- ==================================== MUSIMOON CONTENT ==================================== -->
+    <div id="content-musimoon" class="app-content-group active">
+      <!-- Getting Started -->
+      <div class="faq-section animate-on-scroll">
+        <div class="faq-section-header">
+          <span class="icon">🎵</span>
+          <h2>MusiMoon — Music &amp; Playlist Features</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              What is MusiMoon Player?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              MusiMoon is an iOS offline and online music player designed for high-fidelity playback, seamless playlist creation, background audio streaming, and personal music organization. Available on the Apple App Store.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I import songs and create custom playlists?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Tap the "+" button in the Playlists tab to create a new collection. You can add songs from your local device storage, Apple Music library, or cloud imports. Drag and drop to rearrange your play queue at any time.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Does MusiMoon support background playback and lock screen controls?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Yes! MusiMoon integrates with iOS Now Playing controls and AirPlay. You can pause, skip tracks, adjust volume, and view album artwork directly from your iPhone lock screen, Control Center, or connected Bluetooth devices.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Is an internet connection required to play my songs?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              No. Any music files saved locally on your device can be played 100% offline without any cellular or Wi-Fi data connection.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Troubleshooting -->
+      <div class="faq-section animate-on-scroll">
+        <div class="faq-section-header">
+          <span class="icon">🛠️</span>
+          <h2>MusiMoon — Troubleshooting &amp; Audio Settings</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              Audio stops when locking the screen or switching apps.
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Ensure Background App Refresh and Media Library permissions are enabled in iPhone Settings → MusiMoon. Also make sure Low Power Mode is not restricting background audio playback.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I back up or restore my custom playlists?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Playlists are automatically included in your standard iOS iCloud Backup. When setting up a new iPhone, restoring from iCloud will preserve all your MusiMoon playlists and custom equalizer presets.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================== ALO TRANSLATE CONTENT ==================================== -->
+    <div id="content-alo_translate" class="app-content-group">
+      <!-- Getting Started -->
+      <div class="faq-section animate-on-scroll">
+        <div class="faq-section-header">
+          <span class="icon">🗣️</span>
+          <h2>Alo Translate — Real-Time Voice Translation</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              How does Alo Translate work?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Alo Translate is an AI-powered real-time voice interpreter. Select your source and target languages, tap the microphone button, and speak naturally. The app transcribes your voice, translates it with AI, and reads the translation out loud.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Which languages are supported?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Alo Translate supports over 40 languages including English, Spanish, French, German, Chinese, Japanese, Korean, Vietnamese, Arabic, Portuguese, and more.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Where is my translation history stored?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              All personal profiles and conversation logs are stored securely on your physical device using iOS Keychain Services. We do not store your private conversation history on cloud databases.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Microphone or speech recognition is not responding.
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Go to iOS Settings → Privacy &amp; Security → Microphone and ensure Alo Translate is enabled. Also verify Speech Recognition permissions are granted.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================== PHONETOTV CONTENT ==================================== -->
+    <div id="content-phonetotv" class="app-content-group">
+      <!-- Getting Started -->
+      <div class="faq-section animate-on-scroll">
+        <div class="faq-section-header">
+          <span class="icon">📺</span>
+          <h2>PhoneToTV — Screen Mirroring &amp; DLNA Casting</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I connect my iPhone to my Smart TV with PhoneToTV?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Ensure both your iPhone and Smart TV (Samsung Tizen, LG WebOS, Sony Android TV, or DLNA receiver) are connected to the exact same Wi-Fi network. Open PhoneToTV, select your TV from the auto-discovery list, and tap Start Mirroring or Stream Video.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Why is my Smart TV not appearing in the discovery list?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              1) Verify Local Network permission is enabled in iOS Settings → PhoneToTV. 2) Ensure your TV is turned on and connected to the same Wi-Fi subnet. 3) Restart your Wi-Fi router if device discovery is blocked by router AP isolation.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              Can I cast web videos directly to my TV?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Yes! PhoneToTV includes an in-app Web Video Sniffer. Navigate to any video website using the built-in browser, and PhoneToTV will automatically extract the video link and stream it directly to your Smart TV in high definition.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================================== GENERAL SUITE CONTENT ==================================== -->
+    <div id="content-general" class="app-content-group">
+      <div class="faq-section animate-on-scroll">
+        <div class="faq-section-header">
+          <span class="icon">🚀</span>
+          <h2>Moonray LLC Apps — General FAQ</h2>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              Who is Moonray LLC?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              Moonray LLC is an independent software development studio crafting high-quality, privacy-first iOS, Web, and Smart TV applications.
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              How do I request a refund for an App Store purchase?
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-answer">
+              All in-app purchases and subscriptions are processed by Apple. To request a refund, visit Apple's official portal at <a href="https://reportaproblem.apple.com" target="_blank" style="color:var(--blue-light);">reportaproblem.apple.com</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Strip -->
+    <div class="contact-strip animate-on-scroll" style="margin-top:40px;">
+      <h3>Still have questions or need technical help?</h3>
+      <p>Our support team responds quickly to help resolve any issues with MusiMoon, Alo Translate, PhoneToTV, or our web products.</p>
+      <div class="actions">
+        <a href="mailto:raymooninvest@gmail.com" class="btn-primary">📧 Email Support (raymooninvest@gmail.com)</a>
+        <a href="privacy.html" class="btn-ghost">Privacy Policy</a>
+        <a href="terms.html" class="btn-ghost">Terms of Use</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <div class="brand-mark sm">M</div>
+          <div class="brand-text">
+            <span class="brand-name">Moonray</span>
+            <span class="brand-tagline">LLC</span>
+          </div>
+        </a>
+        <p>Crafting intelligent apps with care.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>Products</h5>
+          <a href="index.html#apps">MusiMoon Player</a>
+          <a href="index.html#apps">Alo Translate</a>
+          <a href="index.html#apps">PhoneToTV</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal &amp; Support</h5>
+          <a href="support.html">Support &amp; FAQs</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Moonray LLC. All rights reserved.</p>
+      <p>Designed &amp; built with ❤️ by Moonray LLC</p>
+    </div>
+  </footer>
+
+  <script>
+    const appData = {
+      musimoon: {
+        name: "MusiMoon Player",
+        sub: "Everything you need to know about MusiMoon Player & Playlists.",
+        logo: "logo/musimoon_logo.png"
+      },
+      alo_translate: {
+        name: "Alo Translate",
+        sub: "Real-time AI voice translation support and setup guide.",
+        logo: "logo/alo_translate_logo.png"
+      },
+      phonetotv: {
+        name: "PhoneToTV",
+        sub: "Smart TV screen mirroring & DLNA video streaming support.",
+        logo: "logo/phonetotv_logo.png"
+      },
+      general: {
+        name: "Moonray LLC Suite",
+        sub: "General questions and support for all Moonray products.",
+        logo: "logo/alo_translate_logo.png"
+      }
+    };
+
+    function switchApp(appKey) {
+      document.querySelectorAll('.app-tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.app-content-group').forEach(group => group.classList.remove('active'));
+
+      const activeGroup = document.getElementById('content-' + appKey);
+      if (activeGroup) activeGroup.classList.add('active');
+
+      const info = appData[appKey] || appData.musimoon;
+      document.getElementById('heroAppLabel').textContent = info.name;
+      document.getElementById('heroAppSub').textContent = info.sub;
+      document.getElementById('heroIcon').src = info.logo;
+
+      // Update button active state
+      const buttons = document.querySelectorAll('.app-tab');
+      buttons.forEach(btn => {
+        if (btn.getAttribute('onclick').includes(appKey)) {
+          btn.classList.add('active');
+        }
+      });
+    }
+
+    // Check URL parameters or hash on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const appParam = urlParams.get('app') || window.location.hash.replace('#', '');
+      if (appParam && appData[appParam]) {
+        switchApp(appParam);
+      }
+    });
+
+    // Observer for animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // Sticky header
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>
